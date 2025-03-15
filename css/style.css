@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+header{
+    background-image: url('/img/home.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: auto;
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+h1{
+    color: #fff;
+    font-size: 3.5rem;
+}
+img{
+    width: 350px;
+    height: auto;
+}
