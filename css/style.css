@@ -1,10 +1,10 @@
 *{
     padding: 0;
     margin: 0;
-    list-style-type: none;
+    
 }
 
-header{
+/*header{
     background-image: url('/img/home.jpg');
     background-size: cover;
     background-position: center;
@@ -17,11 +17,51 @@ header{
     justify-content: center;
     align-items: center;
     
+}*/
+
+body{
+    background-image: url("../img/home.jpg");;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    margin: 0px;
+    padding: 0;
+}
+/* .body{
+width: 2000px;
+height: 2000px;
+
+} */
+
+.centrado{
+    
+    
+   max-width: fit-content;
+   margin-left: auto;
+   margin-right: auto;
+    
+
+}
+.encabezadoCatergoria{
+    
+    
+   width:500px;
+    display:block;
+    text-align: center;
+    
 }
 
-h1{
+h2{
     color: #fff;
     font-size: 3.5rem;
+    
+}
+h3{
+    background-color: black;
+    color: #fff;
+    border: solid white
+    
 }
 img{
     width: 350px;
