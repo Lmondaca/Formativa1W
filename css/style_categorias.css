@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    background-image: url("../img/home.jpg");
+    ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section {
+    width: 800px;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(73, 50, 201);
+}
+
+.descripcionCatergoria {
+    width: 800px;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 10px;
+
+}
+
+.descripcionJuegos1 {
+
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+    max-width: fit-content;
+    border-top: solid;
+    padding-top: 10px;
+}
+
+.precio_boton {
+
+
+
+    width: 500px;
+    text-align: right;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+.precio {
+
+    width: 200px;
+}
+
+.boton {
+
+    width: 100px
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+}
