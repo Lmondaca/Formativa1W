@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-
+    font-family: sans-serif;
 }
 
 body {
@@ -25,9 +25,13 @@ section {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
-
     padding: 10px;
 
+}
+
+.descripcionCatergoria h1{
+    color: #fff;
+    font-size: 2.5rem;    
 }
 
 .descripcionJuegos1 {
@@ -40,10 +44,12 @@ section {
     padding-top: 10px;
 }
 
+.descripcionJuegos1 h2{
+    color: #c7c7c7;
+    font-style: italic;
+}
+
 .precio_boton {
-
-
-
     width: 500px;
     text-align: right;
     position: relative;
@@ -52,13 +58,22 @@ section {
 }
 
 .precio {
-
     width: 200px;
 }
 
 .boton {
-
     width: 100px
+}
+
+.linkInicio a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.linkInicio a:hover {
+    color: #ff4500;
+    text-decoration: underline;
 }
 
 h1 {
