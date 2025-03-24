@@ -5,22 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carreras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style_categorias.css">
 </head>
 
-<body>
-    <header>
-        <div class="linkInicio">
-            <a href="index.html">Ir al inicio...</a>
-
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Games LF</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="registro.html">Registro</a>
         </div>
-    </header>
-    <section>
-        <div class="descripcionCatergoria">
-            <h1>Carreras</h1>
-            <img src="img/fondo carreras.jpg" alt="Imagen de carreras">
-            <br>
-            <p>
+      </div>
+    </div>
+  </nav>
+
+<body>
+
+    <section class="container my-5">
+        <div class="descripcionCatergoria text-center">
+            <h1 class="text-white">Carreras</h1>
+            <img src="img/fondo carreras.jpg" alt="Imagen de carreras" class="img-fluid rounded shadow mb-4">
+            <p class="text-white">
                 Los videojuegos de carreras son un género enfocado en la competición de velocidad,
                 donde los jugadores conducen vehículos como autos, motos o karts. Pueden incluir simulaciones realistas
                 con físicas precisas y detalles técnicos, o experiencias más arcade con controles sencillos y poderes
@@ -30,52 +39,42 @@
                 Ejemplos populares incluyen Gran Turismo, Need for Speed y Mario Kart.
             </p>
         </div>
-        <br>
-        <br>
-        <div class="descripcionJuegos1">
-            <img src="img/needforspeed.webp" alt="probando" style="border-radius: 15px;">
-            <br>
-            <h2>Need for Speed Hot Pursuit Remastered</h2>
-            <br>
 
-            <p>Siente la emoción de la persecución y la adrenalina al huir en Need for Speed™ Hot Pursuit Remastered en
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+            <img src="img/needforspeed.webp" alt="Need for Speed" class="img-fluid rounded shadow mb-3">
+            <h2 class="text-white">Need for Speed Hot Pursuit Remastered</h2>
+            <p class="text-white">
+                Siente la emoción de la persecución y la adrenalina al huir en Need for Speed™ Hot Pursuit Remastered en
                 Nintendo Switch™. Siente la sensación de ir a toda velocidad como forajido y como policía en los autos
                 de alto rendimiento más populares del mundo. Supera la presión o derriba a infractores con las armas
                 tácticas que tienes en esta experiencia de carreras competitiva y tensa. Esta es la presentación del
                 juego aclamado por la crítica, Need for Speed Ultimate Edition de Criterion Games, actualizado con
                 imágenes mejoradas, multijugador con plataforma cruzada, competencia asincrónica de Autolog y todos los
-                DLC adicionales. Es hora de reanudar la persecución.</p>
-            <br>
-            <div class="precio_boton">
-                <h4><span style="margin-right: 4px;">CLP$</span> 31.900</h4>
-
-                <button type="button">Comprar</button>
-
+                DLC adicionales. Es hora de reanudar la persecución.
+            </p>
+            <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h4 class="text-white m-0"><span>CLP$</span> 31.900</h4>
+                <button type="button" class="btn btn-primary">Comprar</button>
             </div>
-
         </div>
-        <br>
-        <div class="descripcionJuegos1">
-            <img src="img/mariokart.jpg" alt="probando" style="border-radius: 15px;">
-            <br>
-            <h2>Mario Kart™ 8 Deluxe</h2>
-            <br>
 
-            <p>¡Acelera a través de las pistas del Reino Champiñón bajo el agua, en el cielo, de cabeza y sin gravedad,
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+            <img src="img/mariokart.jpg" alt="Mario Kart" class="img-fluid rounded shadow mb-3">
+            <h2 class="text-white">Mario Kart™ 8 Deluxe</h2>
+            <p class="text-white">
+                ¡Acelera a través de las pistas del Reino Champiñón bajo el agua, en el cielo, de cabeza y sin gravedad,
                 y llega a la meta para obtener la victoria! Prepara motores en el modo multijugador local*, en los
-                torneos en línea** del juego, en el modo batalla que ha sido mejorado ¡y más!</p>
-            <br>
-            <div class="precio_boton">
-                <h4><span style="margin-right: 4px;">CLP$</span> 31.900</h4> 
-                <button type="button">Comprar</button>
-            
-            <br>
-
+                torneos en línea** del juego, en el modo batalla que ha sido mejorado ¡y más!
+            </p>
+            <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h4 class="text-white m-0"><span>CLP$</span> 31.900</h4>
+                <button type="button" class="btn btn-primary">Comprar</button>
             </div>
-
         </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

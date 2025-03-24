@@ -5,33 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rol</title>
-    <style>
-        h1 {
-            text-align: center;
-        }
-
-        img {
-            width: 500px;
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style_categorias.css">
 </head>
 
-<body>
-    <header>
-        <div class="linkInicio">
-            <a href="index.html">Ir al inicio...</a>
-
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Games LF</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="registro.html">Registro</a>
         </div>
-    </header>
-    <section>
-        <div class="descripcionCatergoria">
-            <h1>Rol</h1>
-            <img src="img/fondo rol.jpg" alt="Imagen de rol">
-
-            <p>
+      </div>
+    </div>
+  </nav>
+  
+<body>
+    <section class="container my-5">
+        <div class="descripcionCatergoria text-center">
+            <h1 class="text-white">Rol</h1>
+            <img src="img/fondo rol.jpg" alt="Imagen de rol" class="img-fluid rounded shadow mb-4">
+            <p class="text-white">
                 Los videojuegos de rol (RPG) son un género donde los jugadores asumen el papel de un personaje
                 o grupo de personajes en un mundo ficticio, desarrollando su historia a través de misiones,
                 exploración y combates. Destacan por la personalización de habilidades, la progresión de niveles
@@ -40,45 +37,33 @@
                 (enfocados en historias lineales y combates por turnos). Ejemplos populares incluyen The Witcher 3,
                 Final Fantasy y The Elder Scrolls V: Skyrim.
             </p>
-
         </div>
-        <br>
-        <br>
-        <div class="descripcionJuegos1">
-            <img src="img/diablo 4.jpg" alt="probando" style="border-radius: 15px;">
-            <br>
-            <h2>Diablo 4</h2>
-            <br>
 
-            <p>Diablo IV es un juego de rol de acción y hack-and-slash desarrollado por Blizzard Entertainment,
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+            <img src="img/diablo 4.jpg" alt="Diablo 4" class="img-fluid rounded shadow mb-3">
+            <h2 class="text-white">Diablo 4</h2>
+            <p class="text-white">
+                Diablo IV es un juego de rol de acción y hack-and-slash desarrollado por Blizzard Entertainment,
                 lanzado en 2023. Ambientado en el oscuro y siniestro mundo de Santuario, el juego sigue la historia
                 de la resurrección de la demoníaca diosa conocida como Lilith, quien desata el caos y la destrucción.
                 Los jugadores pueden elegir entre varias clases, como el barbarian, sorceress, druid y rogue, para
-                explorar
-                un vasto mundo abierto, enfrentarse a hordas de enemigos y buscar poderosos botines.
+                explorar un vasto mundo abierto, enfrentarse a hordas de enemigos y buscar poderosos botines.
                 El juego presenta gráficos impresionantes, un sistema de combate dinámico, un mundo compartido en línea
                 y contenido constante, lo que mantiene a los jugadores involucrados en la acción y la exploración.
                 Diablo IV también mantiene la esencia de la serie con su tono oscuro y temático, junto con un enfoque en
-                la narrativa y la personalización del personaje.</p>
-            <br>
-            <div class="precio_boton">
-                <h4><span style="margin-right: 4px;">CLP$</span> 45.900</h4>
-                <button type="button">Comprar</button>
+                la narrativa y la personalización del personaje.
+            </p>
+            <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h4 class="text-white m-0"><span>CLP$</span> 45.900</h4>
+                <button type="button" class="btn btn-primary">Comprar</button>
             </div>
-
-            
-
         </div>
 
-
-        <br>
-        <div class="descripcionJuegos1">
-            <img src="img/wow dragonflight.jpg" alt="probando" style="border-radius: 15px;">
-            <br>
-            <h2>World of Warcraft Dragonflight</h2>
-            <br>
-
-            <p>World of Warcraft: Dragonflight es la novena expansión de World of Warcraft, lanzada en 2022.
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+            <img src="img/wow dragonflight.jpg" alt="World of Warcraft Dragonflight" class="img-fluid rounded shadow mb-3">
+            <h2 class="text-white">World of Warcraft Dragonflight</h2>
+            <p class="text-white">
+                World of Warcraft: Dragonflight es la novena expansión de World of Warcraft, lanzada en 2022.
                 Esta expansión introduce a los jugadores en las Islas Dragón, un continente olvidado lleno de misterios
                 y antiguas civilizaciones, donde los dragones han jugado un papel fundamental en la historia.
                 Los jugadores pueden explorar nuevas zonas, descubrir secretos ancestrales y enfrentarse a nuevos
@@ -89,22 +74,17 @@
                 Dragonflight
                 trae mejoras en el sistema de vuelo, cambios en la progresión de personajes, y un enfoque en la
                 personalización
-                y exploración, con un mundo más dinámico y accesible.</p>
-            <br>
-            <div class="precio_boton">
-                <h4><span style="margin-right: 4px;">CLP$</span> 31.900</h4>
-                <button type="button">Comprar</button>
+                y exploración, con un mundo más dinámico y accesible.
+            </p>
+            <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h4 class="text-white m-0"><span>CLP$</span> 31.900</h4>
+                <button type="button" class="btn btn-primary">Comprar</button>
             </div>
-            
-
-            <br>
-
         </div>
-
-
     </section>
-
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
