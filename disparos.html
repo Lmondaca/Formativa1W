@@ -5,88 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disparos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style_categorias.css">
-    <style>
-        h1 {text-align: center;}
-
-        img {
-            width: 500px; 
-            display: block; 
-            margin: 0 auto;
-        }
-    </style>
 </head>
 
-<body>
-    <header>
-        <div class="linkInicio">
-            <a href="index.html">Ir al inicio...</a>
-
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Games LF</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="registro.html">Registro</a>
         </div>
-    </header>
-    <section>
-        <div class="descripcionCatergoria">
-    <h1>Disparos</h1>
-    <img src="img/fondo disparos.jpg" alt="Imagen de disparos">
-
-    <p>
-        Los videojuegos de disparos (shooter) son un género centrado en el combate con armas de fuego 
-        u otros proyectiles. Los jugadores deben eliminar enemigos o cumplir objetivos en entornos de acción rápida. 
-        Se dividen en primera persona (FPS), donde se juega desde la perspectiva del personaje (ej., Call of Duty), 
-        y tercera persona (TPS), con una vista detrás del personaje (ej., Gears of War). Pueden incluir modos de campaña, 
-        multijugador competitivo o cooperativo, y suelen destacar por la estrategia, reflejos y precisión.
-    </p>
-
-</div>
-<br>
-<br>
-<div class="descripcionJuegos1">
-    <img src="img/battlefield 1.png" alt="probando" style="border-radius: 15px;">
-    <br>
-    <h2>Battlefield 1</h2>
-    <br>
-
-    <p>Sumérgete en los intensos combates de la Primera Guerra Mundial con Battlefield 1. Experimenta la guerra total 
-        a través de épicas batallas en tierra, aire y mar, con entornos destructibles y una historia envolvente. 
-        Participa en emocionantes modos multijugador o vive campañas bélicas</p>
-    <br>
-    <div class="precio_boton">
-        <h4><span style="margin-right: 4px;">CLP$</span> 15.900</h4>
-        <button type="button">Comprar</button>
+      </div>
     </div>
+  </nav>
 
-        
 
-    </div>
+<body>
+    <div class="wrap">
+    <section class="container my-5">
+        <div class="descripcionCatergoria text-center">
+            <h1 class="text-white">Disparos</h1>
+            <img src="img/fondo disparos.jpg" alt="Imagen de disparos" class="img-fluid rounded shadow mb-4">
+            <p class="text-white">
+                Los videojuegos de disparos (shooter) son un género centrado en el combate con armas de fuego 
+                u otros proyectiles. Los jugadores deben eliminar enemigos o cumplir objetivos en entornos de acción rápida. 
+                Se dividen en primera persona (FPS), donde se juega desde la perspectiva del personaje (ej., Call of Duty), 
+                y tercera persona (TPS), con una vista detrás del personaje (ej., Gears of War). Pueden incluir modos de campaña, 
+                multijugador competitivo o cooperativo, y suelen destacar por la estrategia, reflejos y precisión.
+            </p>
+        </div>
 
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+            <img src="img/battlefield 1.png" alt="Battlefield 1" class="img-fluid rounded shadow mb-3">
+            <h2 class="text-white">Battlefield 1</h2>
+            <p class="text-white">
+                Sumérgete en los intensos combates de la Primera Guerra Mundial con Battlefield 1. Experimenta la guerra total 
+                a través de épicas batallas en tierra, aire y mar, con entornos destructibles y una historia envolvente. 
+                Participa en emocionantes modos multijugador o vive campañas bélicas.
+            </p>
+            <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h4 class="text-white m-0"><span>CLP$</span> 15.900</h4>
+                <button type="button" class="btn btn-primary">Comprar</button>
+            </div>
+        </div>
+
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+            <img src="img/call of duty.webp" alt="Call of Duty Black Ops" class="img-fluid rounded shadow mb-3">
+            <h2 class="text-white">Call of Duty Black Ops</h2>
+            <p class="text-white">
+                Call of Duty: Black Ops es un juego de disparos en primera persona (FPS) lanzado en 2010. 
+                Ambientado durante la Guerra Fría, los jugadores asumen el papel de un agente de operaciones 
+                encubiertas en misiones secretas alrededor del mundo. Destaca por su intensa campaña narrativa, 
+                modos multijugador competitivos y el popular modo de zombis, ofreciendo una experiencia de combate 
+                variada y emocionante.
+            </p>
+            <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h4 class="text-white m-0"><span>CLP$</span> 31.900</h4>
+                <button type="button" class="btn btn-primary">Comprar</button>
+            </div>
+        </div>
+    </section>
 </div>
-<br>
-<div class="descripcionJuegos1">
-    <img src="img/call of duty.webp" alt="probando" style="border-radius: 15px;">
-    <br>
-    <h2>Call of duty Black Ops</h2>
-    <br>
-
-    <p>Call of Duty: Black Ops es un juego de disparos en primera persona (FPS) lanzado en 2010. 
-        Ambientado durante la Guerra Fría, los jugadores asumen el papel de un agente de operaciones 
-        encubiertas en misiones secretas alrededor del mundo. Destaca por su intensa campaña narrativa, 
-        modos multijugador competitivos y el popular modo de zombis, ofreciendo una experiencia de combate 
-        variada y emocionante.</p>
-    <br>
-    <div class="precio_boton">
-        <h4><span style="margin-right: 4px;">CLP$</span> 31.900</h4>
-        <button type="button">Comprar</button>
-    </div>    
-       
-    
-    <br>
-
-    </div>
-
-</div>
-</section>
-
-    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
