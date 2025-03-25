@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="css/style_categorias.css">
+   
+</head>
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Games LF</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="registro.html">Registro</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<body>
+    <div class="wrap">
+    <section class="container mt-5">
+        <h1 class="text-center text-white">Registro</h1>
+        <form id="formularioRegistro">
+            <div class="mb-3">
+                <label for="nombreCompleto" class="form-label text-white">Nombre completo</label>
+                <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto">
+                <div class="error" id="errorNombre"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="nombreUsuario" class="form-label text-white">Nombre de usuario</label>
+                <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario">
+                <div class="error" id="errorUsuario"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="correo" class="form-label text-white">Correo electrónico</label>
+                <input type="text" class="form-control" id="correo" name="correo">
+                <div class="error" id="errorCorreo"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="clave" class="form-label text-white">Contraseña</label>
+                <input type="password" class="form-control" id="clave" name="clave">
+                <div class="error" id="errorClave"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="repetirClave" class="form-label text-white">Repetir contraseña</label>
+                <input type="password" class="form-control" id="repetirClave" name="repetirClave">
+                <div class="error" id="errorRepetirClave"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="fechaNacimiento" class="form-label text-white">Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                <div class="error" id="errorFecha"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="direccion" class="form-label text-white">Dirección de despacho (opcional)</label>
+                <input type="text" class="form-control" id="direccion" name="direccion">
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="button" class="btn btn-secondary" id="limpiarFormulario">Limpiar</button>
+            </div>
+        </form>
+    </section>
+</div>
+    <script>
+        $(document).ready(function () {
+            $("#limpiarFormulario").click(function () {
+                $("#formularioRegistro")[0].reset();
+                $(".error").text("");
+            });
+
+            $("#formularioRegistro").submit(function (event) {
+                event.preventDefault();
+
+                $(".error").text("");
+
+                let valid = true;
+
+                if ($("#nombreCompleto").val().trim() === "") {
+                    $("#errorNombre").text("El nombre completo es obligatorio.");
+                    valid = false;
+                }
+
+                if ($("#nombreUsuario").val().trim() === "") {
+                    $("#errorUsuario").text("El nombre de usuario es obligatorio.");
+                    valid = false;
+                }
+
+                const correo = $("#correo").val().trim();
+                const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (correo === "") {
+                    $("#errorCorreo").text("El correo electrónico es obligatorio.");
+                    valid = false;
+                } else if (!regexCorreo.test(correo)) {
+                    $("#errorCorreo").text("El correo electrónico no es válido.");
+                    valid = false;
+                }
+
+                const clave = $("#clave").val();
+                const regexClave = /^(?=.*[A-Z])(?=.*\d).{6,18}$/;
+                if (clave === "") {
+                    $("#errorClave").text("La contraseña es obligatoria.");
+                    valid = false;
+                } else if (!regexClave.test(clave)) {
+                    $("#errorClave").text("La contraseña debe tener entre 6 y 18 caracteres, al menos una mayúscula y un número.");
+                    valid = false;
+                }
+
+                const repetirClave = $("#repetirClave").val();
+                if (repetirClave === "") {
+                    $("#errorRepetirClave").text("Debes repetir la contraseña.");
+                    valid = false;
+                } else if (repetirClave !== clave) {
+                    $("#errorRepetirClave").text("Las contraseñas no coinciden.");
+                    valid = false;
+                }
+
+                const fechaNacimiento = new Date($("#fechaNacimiento").val());
+                const hoy = new Date();
+                const edadMinima = new Date(hoy.getFullYear() - 13, hoy.getMonth(), hoy.getDate());
+                if (!$("#fechaNacimiento").val()) {
+                    $("#errorFecha").text("La fecha de nacimiento es obligatoria.");
+                    valid = false;
+                } else if (fechaNacimiento > edadMinima) {
+                    $("#errorFecha").text("Debes tener al menos 13 años para registrarte.");
+                    valid = false;
+                }
+
+                if (valid) {
+                    alert("Formulario enviado correctamente.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

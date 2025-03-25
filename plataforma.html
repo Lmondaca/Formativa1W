@@ -5,86 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma</title>
-    <style>
-        h1 {text-align: center;}
-
-        img {
-            width: 600px; 
-            display: block; 
-            margin: 0 auto; 
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style_categorias.css">
 </head>
 
-<body>
-    <header>
-        <div class="linkInicio">
-            <a href="index.html">Ir al inicio...</a>
-
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Games LF</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="registro.html">Registro</a>
         </div>
-    </header>
-    <section>   
-        <div class="descripcionCatergoria">
-    <h1>Plataforma</h1>
-    <img src="img/fondo plataforma.jpg" alt="Imagen de plataformas">
-
-    <p>
-        Los videojuegos de plataformas son un género donde los jugadores controlan un personaje que debe avanzar 
-        a través de niveles superando obstáculos como saltos, enemigos y trampas. 
-        Suelen centrarse en la precisión de los movimientos, exploración y recolección de objetos. 
-        Pueden tener una vista en 2D (horizontal o vertical) o en 3D, con diferentes niveles de dificultad y 
-        mecánicas únicas. Ejemplos icónicos incluyen Super Mario Bros., Sonic the Hedgehog y Crash Bandicoot.
-    </p>
-</div>
-<br>
-<br>
-<div class="descripcionJuegos1">
-    <img src="img/super mario odissey.jpeg" alt="probando" style="border-radius: 15px;">
-    <br>
-    <h2>Super Mario Odissey</h2>
-    <br>
-
-    <p>Super Mario Odyssey es un juego de aventuras y plataformas en 3D donde Mario viaja por diversos reinos 
-        para rescatar a la Princesa Peach de Bowser. Acompañado por Cappy, un sombrero viviente, Mario puede poseer enemigos 
-        y objetos para superar desafíos. Destaca por sus mundos abiertos, exploración libre y una jugabilidad innovadora y creativa.</p>
-    <br>
-    <div class="precio_boton">
-        <h4><span style="margin-right: 4px;">CLP$</span> 49.900</h4>
-        <button type="button">Comprar</button>
-
+      </div>
     </div>
+  </nav>
 
+<body>
+<div class="wrap">
+    <section class="container my-5">
+        <div class="descripcionCatergoria text-center">
+            <h1 class="text-white">Plataforma</h1>
+            <img src="img/fondo plataforma.jpg" alt="Imagen de plataformas" class="img-fluid rounded shadow mb-4">
+            <p class="text-white">
+                Los videojuegos de plataformas son un género donde los jugadores controlan un personaje que debe avanzar 
+                a través de niveles superando obstáculos como saltos, enemigos y trampas. 
+                Suelen centrarse en la precisión de los movimientos, exploración y recolección de objetos. 
+                Pueden tener una vista en 2D (horizontal o vertical) o en 3D, con diferentes niveles de dificultad y 
+                mecánicas únicas. Ejemplos icónicos incluyen Super Mario Bros., Sonic the Hedgehog y Crash Bandicoot.
+            </p>
+        </div>
+
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+            <img src="img/super mario odissey.jpeg" alt="Super Mario Odyssey" class="img-fluid rounded shadow mb-3">
+            <h2 class="text-white">Super Mario Odyssey</h2>
+            <p class="text-white">
+                Super Mario Odyssey es un juego de aventuras y plataformas en 3D donde Mario viaja por diversos reinos 
+                para rescatar a la Princesa Peach de Bowser. Acompañado por Cappy, un sombrero viviente, Mario puede poseer enemigos 
+                y objetos para superar desafíos. Destaca por sus mundos abiertos, exploración libre y una jugabilidad innovadora y creativa.
+            </p>
+            <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h4 class="text-white m-0"><span>CLP$</span> 49.900</h4>
+                <button type="button" class="btn btn-primary">Comprar</button>
+            </div>
+        </div>
+
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+            <img src="img/Sonic-Mania.jpeg" alt="Sonic Mania" class="img-fluid rounded shadow mb-3">
+            <h2 class="text-white">Sonic Mania</h2>
+            <p class="text-white">
+                Sonic Mania es un videojuego de plataformas 2D que homenajea los clásicos de la saga de Sonic the Hedgehog. 
+                Desarrollado por Christian Whitehead, Headcannon y PagodaWest Games, y publicado por Sega, fue lanzado en 2017. 
+                El juego presenta niveles rediseñados de los juegos originales de Sonic, como Sonic the Hedgehog 1, 2, 3 y Sonic & Knuckles, 
+                así como nuevos escenarios. Los jugadores controlan a Sonic, Tails y Knuckles mientras luchan contra el malvado Dr. Robotnik 
+                en su intento por detener sus planes. Con gráficos retro, música inspirada en la era de 16 bits y jugabilidad clásica, 
+                Sonic Mania recibió críticas positivas por su fidelidad a los juegos originales y su excelente diseño.
+            </p>
+            <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h4 class="text-white m-0"><span>CLP$</span> 19.900</h4>
+                <button type="button" class="btn btn-primary">Comprar</button>
+            </div>
+        </div>
+    </section>
 </div>
-<br>
-<div class="descripcionJuegos1">
-    <img src="img/Sonic-Mania.jpeg" alt="probando" style="border-radius: 15px;">
-    <br>
-    <h2>Sonic Mania</h2>
-    <br>
-
-    <p>Sonic Mania es un videojuego de plataformas 2D que homenajea los clásicos de la saga de Sonic the Hedgehog. 
-        Desarrollado por Christian Whitehead, Headcannon y PagodaWest Games, y publicado por Sega, fue lanzado en 2017. 
-        El juego presenta niveles rediseñados de los juegos originales de Sonic, como Sonic the Hedgehog 1, 2, 3 y Sonic & Knuckles, 
-        así como nuevos escenarios. Los jugadores controlan a Sonic, Tails y Knuckles mientras luchan contra el malvado Dr. Robotnik 
-        en su intento por detener sus planes. Con gráficos retro, música inspirada en la era de 16 bits y jugabilidad clásica, 
-        Sonic Mania recibió críticas positivas por su fidelidad a los juegos originales y su excelente diseño.</p>
-    <br>
-    <div class="precio_boton">
-        <h4><span style="margin-right: 4px;">CLP$</span> 19.900</h4>
-        <button type="button">Comprar</button>
-
-    <br>
-
-    </div>
-
-</div>
-</section>
-
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
