@@ -36,7 +36,14 @@
                             <form id="form_nuevojuego" action="">
                                 <div class="mb-3">
                                     <label for="" class="form-label">Categoría del Juego</label>
-                                    <input type="text" name="categoria" id="categoria" class="form-control">
+                                    <select name="categoria" id="categoria" class="form-control">
+                                        <option>Selecciona categoría</option>
+                                        <option value="Carreras">Carreras</option>
+                                        <option value="Disparos">Disparos</option>
+                                        <option value="Pelea">Pelea</option>
+                                        <option value="Plataforma">Plataforma</option>
+                                        <option value="Rol">Rol</option>
+                                    </select>
                                     <small class="text-danger" id="categoria-error"></small>
                                 </div>
 

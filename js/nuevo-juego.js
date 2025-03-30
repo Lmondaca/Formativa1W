@@ -1,38 +1,63 @@
-$(document).ready(function(){
-    $('#form_nuevojuego').submit(function(event){
+$(document).ready(function() {
+    $('#form_nuevojuego').submit(function(event) {
         event.preventDefault();
+        $('.text-danger').text('');
+        
+        const categoria = $('#categoria').val();
+        const nombre = $('#nombre').val().trim();
+        const descripcion = $('#descripcion').val().trim();
+        const precio = $('#precio').val();
+        const imagen = $('#imagen')[0].files[0];
 
-        $('#categoria-error').text('')
-        $('#nombre-error').text('')
-        $('#descripcion-error').text('')
-        $('#precio-error').text('')
-        $('#imagen-error').text('')
+        let hasErrors = false;
 
-        if($('#categoria').val() === '') {
-            $('#categoria-error').text('Por favor, ingresa una categoría')
-            return;
+        if (!categoria) {
+            $('#categoria-error').text('Selecciona una categoría válida');
+            hasErrors = true;
         }
 
-        if($('#nombre').val() === '') {
-            $('#nombre-error').text('Por favor, ingresa un nombre')
-            return;
+        if (!nombre) {
+            $('#nombre-error').text('Nombre requerido');
+            hasErrors = true;
         }
 
-        if($('#descripcion').val() === '') {
-            $('#descripcion-error').text('Por favor, ingresa una descripción')
-            return;
+        if (!descripcion || descripcion.length < 50) {
+            $('#descripcion-error').text('Descripción mínima 50 caracteres');
+            hasErrors = true;
         }
 
-        if($('#precio').val() === '') {
-            $('#precio-error').text('Por favor, ingresa un precio')
-            return;
+        if (!precio || isNaN(precio) || precio < 1000) {
+            $('#precio-error').text('Precio inválido (mínimo $1.000)');
+            hasErrors = true;
         }
 
-        if($('#imagen').val() === '') {
-            $('#imagen-error').text('Por favor, ingresa una imagen')
-            return;
+        if (!imagen) {
+            $('#imagen-error').text('Selecciona una imagen');
+            hasErrors = true;
         }
 
-        this.submit();
+        if (hasErrors) return;
+
+        // convertir imagen a Base64
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const newGame = {
+                id: Date.now(),
+                name: nombre,
+                category: categoria,
+                description: descripcion,
+                price: parseFloat(precio),
+                image: e.target.result,
+                date: new Date().toISOString()
+            };
+
+            const games = JSON.parse(localStorage.getItem('games')) || [];
+            games.push(newGame);
+            localStorage.setItem('games', JSON.stringify(games));
+
+            alert('Juego agregado exitosamente!');
+            window.location.href = categoria.toLowerCase() + '.html';
+        };
+        reader.readAsDataURL(imagen);
     });
-})
+});
