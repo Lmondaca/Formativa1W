@@ -141,3 +141,12 @@ img {
     padding-bottom: 10px;
 
 }
+
+#recuperarPass {
+    color: #f3f3f3;
+}
+
+#recuperarPass:hover {
+    color: #838383;
+    font-size: 105%;
+}
