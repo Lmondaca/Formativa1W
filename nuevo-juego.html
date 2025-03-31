@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Juego</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/nuevo-juego.js" ></script>
     <link rel="stylesheet" href="css/style.css">
     
     <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Games LF</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" href="registro.html">Registro</a>
+            <a class="navbar-brand" href="index.html">Games LF</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="registro.html">Registro</a>
+                    <a class="nav-link" href="nuevo-juego.html" id="adminLink" style="display: none;">Agregar Juego</a>
+                </div>
+                <div class="ms-auto">
+                    <a href="?admin=true" class="btn btn-outline-light" id="adminBtn">Modo Admin</a>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
+    </nav>
    
 </head>
 <body>
@@ -67,7 +65,8 @@
 
                                 <div class="mb-3">
                                     <label for="" class="form-label">Imagen</label>
-                                    <input type="file" name="imagen" id="imagen" class="form-control">
+                                    <input type="file" name="imagen" id="imagen" class="form-control" accept="image/*">
+                                    <small class="text-muted">Formatos aceptados: JPG, PNG, WEBP</small>
                                     <small class="text-danger" id="imagen-error"></small>
                                 </div>
 
@@ -84,52 +83,19 @@
         </div>  
     </div>
 
-    <!-- <script>
-        const form = document.getElementById('form_nuevojuego');
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const isAdmin = urlParams.has('admin');
+        
+        document.getElementById('adminLink').style.display = isAdmin ? 'block' : 'none';
+        
+        document.getElementById('adminBtn').textContent = isAdmin ? 'Modo Usuario' : 'Modo Admin';
+        
+        document.getElementById('adminBtn').href = isAdmin ? window.location.pathname : '?admin=true';
+    </script>
 
-        const categoriaInput = document.getElementById('categoria');
-        const nombreInput = document.getElementById('nombre');
-        const descripcionInput = document.getElementById('descripcion');
-        const precioInput = document.getElementById('precio');
-        const imagenInput = document.getElementById('imagen');
-
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            document.getElementById('categoria-error').innerHTML = '';
-            document.getElementById('nombre-error').innerHTML = '';
-            document.getElementById('descripcion-error').innerHTML = '';
-            document.getElementById('precio-error').innerHTML = '';
-            document.getElementById('imagen-error').innerHTML = '';
-
-
-            if(categoriaInput.value === '') {
-                document.getElementById('categoria-error').innerHTML = 'Por favor, ingresa una categoría';
-                return;
-            }
-
-            if(nombreInput.value === '') {
-                document.getElementById('nombre-error').innerHTML = 'Por favor, ingresa un nombre';
-                return;
-            }
-
-            if(descripcionInput.value === '') {
-                document.getElementById('descripcion-error').innerHTML = 'Por favor, ingresa una descripción';
-                return;
-            }
-
-            if(precioInput.value === '') {
-                document.getElementById('precio-error').innerHTML = 'Por favor, ingresa un precio';
-                return;
-            }
-
-            if(imagenInput.value === '') {
-                document.getElementById('imagen-error').innerHTML = 'Por favor, ingresa una imagen';
-                return;
-            }
-            form.submit();
-        });
-    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/nuevo-juego.js" ></script>
 </body>
 </html>

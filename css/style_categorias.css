@@ -102,3 +102,15 @@ img {
     color: red;
     font-size: 0.9em;
 }
+
+
+.admin-only {
+    display: none !important;
+}
+
+#toggleRoleBtn {
+    transition: all 0.3s ease;
+}
+#toggleRoleBtn:hover {
+    transform: scale(1.05);
+}
