@@ -102,3 +102,25 @@ img {
     color: red;
     font-size: 0.9em;
 }
+.cart-counter {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+}
+.ajuste-cuadro{
+    max-width: 800px;
+    width: 90%;
+}
+.boton_confirm{
+    display: block;
+    float: right;
+   
+}
+.tabla-fila{
+    padding-bottom: 10px;
+}
