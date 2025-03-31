@@ -36,12 +36,16 @@
                 <div class="error" id="errorUsuario"></div>
             </div>
 
-
+            
             <div class="mb-3">
-                <label for="clave" class="form-label text-white">Contraseña</label>
-                <input type="password" class="form-control" id="clave" name="clave">
-                <div class="error" id="errorClave"></div>
+              <label for="clave" class="form-label text-white">Contraseña</label>
+              <input type="password" class="form-control" id="clave" name="clave">
+              <div class="error" id="errorClave"></div>
             </div>
+            
+            <div class="recuperar-pass d-flex justify-content-center mb-3">
+              <a id="recuperarPass">¿Olvidaste tu contraseña?</a>
+          </div>
 
             <div class="text-center">
                 <button type="submit" class="btn btn-primary"> Iniciar Sesión</button>
@@ -50,6 +54,27 @@
         </form>
     </section>
 </div>
+
+<script>
+  $(document).ready(function() {
+      $('#recuperarPass').click(function(e) {
+          e.preventDefault();
+          
+          const usuario = $('#nombreUsuario').val().trim();
+          
+          if(usuario === '') {
+              alert('Debe ingresar su nombre de usuario para recuperar la contraseña');
+              $('#nombreUsuario').addClass('is-invalid');
+              return;
+          }
+          
+          alert('Se ha enviado un correo electrónico con instrucciones para restablecer tu contraseña.');
+      });
+      $('#nombreUsuario').on('input', function() {
+          $(this).removeClass('is-invalid');
+      });
+  });
+</script>
     <script src="js/login.js"></script>
 </body>
 </html>
