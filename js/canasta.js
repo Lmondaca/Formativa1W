@@ -44,9 +44,11 @@ $(document).on('click', '.add-to-cart', function () {
 $(document).on('click', '.remove-item', function () {
     let product = $(this).data('item');
     if (cart[product] > 1) {
+        valor_cart[product]-=valor_cart[product]/cart[product];
         cart[product]--;
     } else {
         delete cart[product];
+        delete valor_cart[product]
     }
     updateCartDisplay();
 });
