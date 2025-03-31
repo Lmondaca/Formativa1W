@@ -12,6 +12,9 @@
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Games LF</a>
+        <button id="cart-btn" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+            🛒 <span id="cart-count" class="cart-counter d-none">0</span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
                 <a class="nav-link" href="registro.html">Registro</a>
@@ -39,24 +42,29 @@
             </p>
         </div>
 
-        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
             <img src="img/battlefield 1.png" alt="Battlefield 1" class="img-fluid rounded shadow mb-3">
-            <h2 class="text-white">Battlefield 1</h2>
-            <p class="text-white">
+            <div class="card-body">
+            <h2 class="text-white card-title">Battlefield 1</h2>
+            <p class="text-white card-text">
                 Sumérgete en los intensos combates de la Primera Guerra Mundial con Battlefield 1. Experimenta la guerra total 
                 a través de épicas batallas en tierra, aire y mar, con entornos destructibles y una historia envolvente. 
                 Participa en emocionantes modos multijugador o vive campañas bélicas.
             </p>
             <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h2 class="text-white card-title" hidden="true">Battlefield 1</h2>
+                <h2 class="precio_valor" hidden="true">15900</h2>
                 <h4 class="text-white m-0"><span>CLP$</span> 15.900</h4>
-                <button type="button" class="btn btn-primary">Comprar</button>
+                <button type="button" class="btn btn-primary add-to-cart">Comprar</button>
             </div>
         </div>
+        </div>
 
-        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
             <img src="img/call of duty.webp" alt="Call of Duty Black Ops" class="img-fluid rounded shadow mb-3">
-            <h2 class="text-white">Call of Duty Black Ops</h2>
-            <p class="text-white">
+            <div class="card-body">
+            <h2 class="text-white card-title">Call of Duty Black Ops</h2>
+            <p class="text-white card-text">
                 Call of Duty: Black Ops es un juego de disparos en primera persona (FPS) lanzado en 2010. 
                 Ambientado durante la Guerra Fría, los jugadores asumen el papel de un agente de operaciones 
                 encubiertas en misiones secretas alrededor del mundo. Destaca por su intensa campaña narrativa, 
@@ -64,55 +72,43 @@
                 variada y emocionante.
             </p>
             <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h2 class="text-white card-title" hidden="true">Call of Duty Black Ops</h2>
+                <h2 class="precio_valor" hidden="true">31900</h2>
                 <h4 class="text-white m-0"><span>CLP$</span> 31.900</h4>
-                <button type="button" class="btn btn-primary">Comprar</button>
+                <button type="button" class="btn btn-primary add-to-cart">Comprar</button>
             </div>
+        </div>
         </div>
 
         <!-- agregar nuevos juegos -->
         <div id="agregar-juego" class="mt-4">
         </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const categoria = document.title;
-                const games = JSON.parse(localStorage.getItem('games')) || [];
-                
-                const filteredGames = games.filter(game => 
-                    game.category.toLowerCase() === categoria.toLowerCase()
-                );
-            
-                const container = document.getElementById('agregar-juego');
-                
-                filteredGames.forEach(game => {
-                    container.innerHTML += `
-                        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
-                            <img src="${game.image}" alt="${game.name}" class="img-fluid rounded shadow mb-3">
-                            <h2 class="text-white">${game.name}</h2>
-                            <p class="text-white">${game.description}</p>
-                            <div class="precio_boton d-flex justify-content-between align-items-center">
-                                <h4 class="text-white m-0"><span>CLP$</span> ${game.price.toFixed(2)}</h4>
-                                <button type="button" class="btn btn-primary">Comprar</button>
-                            </div>
-                        </div>
-                    `;
-                });
-            });
-            </script>
+        
     </section>
 </div>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const isAdmin = urlParams.has('admin');
-        
-        document.getElementById('adminLink').style.display = isAdmin ? 'block' : 'none';
-        
-        document.getElementById('adminBtn').textContent = isAdmin ? 'Modo Usuario' : 'Modo Admin';
-        
-        document.getElementById('adminBtn').href = isAdmin ? window.location.pathname : '?admin=true';
-    </script>
+<div class="modal fade " id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog ajuste-cuadro">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title text-white" id="cartModalLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-dark">
+
+                <div class="row g-3 tabla-fila ">
+                    <ul id="cart-items" class="list-group"></ul>
+                </div>
+                <div id="total_confirm" class="contenedor_total_confirm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/canasta.js"></script>
+    <script src="js/agregar-juego-pag.js"></script>
 </body>
 
 </html>
