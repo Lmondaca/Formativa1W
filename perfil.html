@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Perfil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -31,56 +31,46 @@
 <body>
     <div class="wrap">
     <section class="container mt-5">
-        <h1 class="text-center text-white">Registro</h1>
+        <h1 class="text-center text-white">Perfil</h1>
         <form id="formularioRegistro">
             <div class="mb-3">
                 <label for="nombreCompleto" class="form-label text-white">Nombre completo</label>
-                <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto">
+                <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" disabled="true" value="Lucas Mondaca">
                 <div class="error" id="errorNombre"></div>
             </div>
 
             <div class="mb-3">
                 <label for="nombreUsuario" class="form-label text-white">Nombre de usuario</label>
-                <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario">
+                <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" disabled="true" value="lmondacah">
                 <div class="error" id="errorUsuario"></div>
             </div>
 
             <div class="mb-3">
                 <label for="correo" class="form-label text-white">Correo electrónico</label>
-                <input type="text" class="form-control" id="correo" name="correo">
+                <input type="text" class="form-control" id="correo" name="correo" disabled="true" value="jajapake@hotmail.com">
                 <div class="error" id="errorCorreo"></div>
             </div>
 
-            <div class="mb-3">
-                <label for="clave" class="form-label text-white">Contraseña</label>
-                <input type="password" class="form-control" id="clave" name="clave">
-                <div class="error" id="errorClave"></div>
-            </div>
-
-            <div class="mb-3">
-                <label for="repetirClave" class="form-label text-white">Repetir contraseña</label>
-                <input type="password" class="form-control" id="repetirClave" name="repetirClave">
-                <div class="error" id="errorRepetirClave"></div>
-            </div>
+           
 
             <div class="mb-3">
                 <label for="fechaNacimiento" class="form-label text-white">Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" value="1994-02-03" disabled="true">
                 <div class="error" id="errorFecha"></div>
             </div>
 
             <div class="mb-3">
                 <label for="direccion" class="form-label text-white">Dirección de despacho (opcional)</label>
-                <input type="text" class="form-control" id="direccion" name="direccion">
+                <input type="text" class="form-control" id="direccion" name="direccion" disabled="true" value="Santiago 123">
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-                <button type="button" class="btn btn-secondary" id="limpiarFormulario">Limpiar</button>
+                <button type="submit" class="btn btn-primary" id="boton_mod" disabled="true" >Guardar</button>
+                <button type="button" class="btn btn-primary" id="limpiarFormulario" >Modificar</button>
             </div>
         </form>
     </section>
 </div>
-    <script src="js/registro.js"></script>
+    <script src="js/perfil.js"></script>
 </body>
 </html>
