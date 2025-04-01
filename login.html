@@ -12,18 +12,22 @@
    
 </head>
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
-    <div class="container-fluid">
+  <div class="container-fluid">
       <a class="navbar-brand" href="index.html">Games LF</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="registro.html">Registro</a>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav">
+              <a class="nav-link" href="index.html">Inicio</a>
+              <a class="nav-link" href="login.html">Iniciar Sesión</a>
+              <a class="nav-link" href="registro.html">Registro</a>
+              <a class="nav-link" href="perfil.html">Perfil</a>
+              <a class="nav-link" href="nuevo-juego.html" id="adminLink" style="display: none;">Agregar Juego</a>
+          </div>
+          <div class="ms-auto">
+              <a href="?admin=true" class="btn btn-outline-light" id="adminBtn">Modo Admin</a>
+          </div>
       </div>
-    </div>
-  </nav>
+  </div>
+</nav>
 <body>
     <div class="wrap">
     <section class="container mt-5 login">
@@ -49,7 +53,7 @@
 
             <div class="text-center">
                 <button type="submit" class="btn btn-primary"> Iniciar Sesión</button>
-                <button type="button" class="btn btn-secondary" id="limpiarFormulario">Registrar</button>
+                <a href="registro.html" class="btn btn-secondary">Registrar</a>
             </div>
         </form>
     </section>
