@@ -15,9 +15,16 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <button id="cart-btn" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+        🛒 <span id="cart-count" class="cart-counter d-none">0</span>
+    </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" href="registro.html">Registro</a>
+          <a class="nav-link" href="nuevo-juego.html" id="adminLink" style="display: none;">Agregar Juego</a>
+        </div>
+        <div class="ms-auto">
+            <a href="?admin=true" class="btn btn-outline-light" id="adminBtn">Modo Admin</a>
         </div>
       </div>
     </div>
@@ -37,39 +44,71 @@
             </p>
         </div>
 
-        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
             <img src="img/mortal kombat 11.jpeg" alt="Mortal Kombat 11" class="img-fluid rounded shadow mb-3">
-            <h2 class="text-white">Mortal Kombat 11</h2>
-            <p class="text-white">
+            <div class="card-body">
+            <h2 class="text-white card-title">Mortal Kombat 11</h2>
+            <p class="text-white card-text">
                 Mortal Kombat 11 es un juego de lucha lanzado en 2019 que destaca por su combate brutal y gráficos detallados. 
                 Ofrece un extenso elenco de luchadores, incluyendo personajes clásicos y nuevos, con movimientos especiales y 
                 fatalities icónicos. Cuenta con un modo historia cinematográfico, torres de desafíos, personalización de personajes 
                 y multijugador en línea, proporcionando una experiencia intensa y competitiva.
             </p>
             <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h2 class="text-white card-title" hidden="true">Mortal Kombat 11</h2>
+                <h2 class="precio_valor" hidden="true">20900</h2>
                 <h4 class="text-white m-0"><span>CLP$</span> 20.900</h4>
-                <button type="button" class="btn btn-primary">Comprar</button>
+                <button type="button" class="btn btn-primary add-to-cart">Comprar</button>
             </div>
         </div>
+        </div>
 
-        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4">
+        <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
             <img src="img/street fighter 5.jpg" alt="Street Fighter 5" class="img-fluid rounded shadow mb-3">
-            <h2 class="text-white">Street Fighter 5</h2>
-            <p class="text-white">
+            <div class="card-body">
+            <h2 class="text-white card-title">Street Fighter 5</h2>
+            <p class="text-white card-text">
                 Street Fighter V es un juego de lucha lanzado en 2016 que combina combates estratégicos y rápidos 
                 con un elenco variado de personajes icónicos como Ryu, Chun-Li y Ken. Destaca por sus mecánicas como el V-System, 
                 que ofrece habilidades únicas para cada luchador. Incluye modos historia, arcade, entrenamiento y multijugador en línea, 
                 proporcionando una experiencia competitiva y dinámica.
             </p>
             <div class="precio_boton d-flex justify-content-between align-items-center">
+                <h2 class="text-white card-title card-title" hidden="true">Street Fighter 5</h2>
+                <h2 class="precio_valor" hidden="true">31900</h2>
                 <h4 class="text-white m-0"><span>CLP$</span> 31.900</h4>
-                <button type="button" class="btn btn-primary">Comprar</button>
+                <button type="button" class="btn btn-primary add-to-cart">Comprar</button>
             </div>
         </div>
+        </div>
+         <!-- agregar nuevos juegos -->
+         <div id="agregar-juego" class="mt-4">
+        </div>
+
     </section>
+</div>
+<div class="modal fade " id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog ajuste-cuadro">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title text-white" id="cartModalLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-dark">
+
+                <div class="row g-3 tabla-fila ">
+                    <ul id="cart-items" class="list-group"></ul>
+                </div>
+                <div id="total_confirm" class="contenedor_total_confirm"></div>
+            </div>
+        </div>
+    </div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/canasta.js"></script>
+    <script src="js/agregar-juego-pag.js"></script>
 </body>
 
 </html>

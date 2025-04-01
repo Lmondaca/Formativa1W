@@ -21,6 +21,9 @@ section {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
+.container.mt-5.login{
+    max-width: 400px ;
+}
 .wrap{
     
     height: auto;
@@ -101,4 +104,49 @@ img {
 .error {
     color: red;
     font-size: 0.9em;
+}
+
+
+
+.admin-only {
+    display: none !important;
+}
+
+#toggleRoleBtn {
+    transition: all 0.3s ease;
+}
+#toggleRoleBtn:hover {
+    transform: scale(1.05);
+}
+.cart-counter {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+}
+.ajuste-cuadro{
+    max-width: 800px;
+    width: 90%;
+}
+.boton_confirm{
+    display: block;
+    float: right;
+   
+}
+.tabla-fila{
+    padding-bottom: 10px;
+
+}
+
+#recuperarPass {
+    color: #f3f3f3;
+}
+
+#recuperarPass:hover {
+    color: #838383;
+    font-size: 105%;
 }

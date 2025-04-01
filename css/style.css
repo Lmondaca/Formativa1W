@@ -60,3 +60,10 @@ a:hover img {
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
+
+.admin-only {
+    display: none !important;
+}
+
+.admin-only.show {
+    display: block !important; }
