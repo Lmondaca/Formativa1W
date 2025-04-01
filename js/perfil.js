@@ -2,8 +2,12 @@
 
 $(document).ready(function () {
     $("#limpiarFormulario").click(function () {
-        $("#formularioRegistro")[0].reset();
+        // $("#formularioRegistro")[0].reset();
+        $("input").prop("disabled",false);
+        $("#limpiarFormulario").prop("hidden",true);
+        $('#boton_mod').prop("disabled",false);
         $(".error").text("");
+        
     });
 
 
@@ -15,7 +19,11 @@ $(document).ready(function () {
         let valid = true;
 
         
-        $("input").prop("disabled",false);
+        
+
+        $("input").prop("disabled",true);
+        $("#limpiarFormulario").prop("hidden",false);
+        $('#boton_mod').prop("disabled",true);
         if ($("#nombreCompleto").val().trim() === "") {
             $("#errorNombre").text("El nombre completo es obligatorio.");
             valid = false;
@@ -36,24 +44,9 @@ $(document).ready(function () {
             valid = false;
         }
 
-        const clave = $("#clave").val();
-        const regexClave = /^(?=.*[A-Z])(?=.*\d).{6,18}$/;
-        if (clave === "") {
-            $("#errorClave").text("La contraseña es obligatoria.");
-            valid = false;
-        } else if (!regexClave.test(clave)) {
-            $("#errorClave").text("La contraseña debe tener entre 6 y 18 caracteres, al menos una mayúscula y un número.");
-            valid = false;
-        }
+       
 
-        const repetirClave = $("#repetirClave").val();
-        if (repetirClave === "") {
-            $("#errorRepetirClave").text("Debes repetir la contraseña.");
-            valid = false;
-        } else if (repetirClave !== clave) {
-            $("#errorRepetirClave").text("Las contraseñas no coinciden.");
-            valid = false;
-        }
+     
 
         const fechaNacimiento = new Date($("#fechaNacimiento").val());
         const hoy = new Date();
@@ -62,10 +55,10 @@ $(document).ready(function () {
             $("#errorFecha").text("La fecha de nacimiento es obligatoria.");
             valid = false;
         } else if (fechaNacimiento > edadMinima) {
-            $("#errorFecha").text("Debes tener al menos 13 años para registrarte.");
+            $("#errorFecha").text("No puedes tener menos de 13 años.");
             valid = false;
         }
-        $("#nombreCompleto").prop('disable', true);
+       
         if (valid) {
             alert("Formulario enviado correctamente.");
         }
