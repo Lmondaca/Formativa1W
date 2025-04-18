@@ -1,24 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games LF</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Games LF</a>
+        <a class="navbar-brand" href="{% url 'catalogo' %}">Games LF</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav">
-                <a class="nav-link" href="index.html">Inicio</a>
-                <a class="nav-link" href="login.html">Iniciar Sesión</a>
-                <a class="nav-link" href="registro.html">Registro</a>
-                <a class="nav-link" href="perfil.html">Perfil</a>
-                <a class="nav-link" href="nuevo-juego.html" id="adminLink" style="display: none;">Agregar Juego</a>
+                <a class="nav-link" href="{% url 'catalogo' %}">Inicio</a>
+                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                <a class="nav-link" href="{% url 'registro' %}">Registro</a>
+                <a class="nav-link" href="{% url 'perfil' %}">Perfil</a>
+                <a class="nav-link" href="{% url 'crearJuego' %}" id="adminLink" style="display: none;">Agregar Juego</a>
             </div>
             <div class="ms-auto">
                 <a href="?admin=true" class="btn btn-outline-light" id="adminBtn">Modo Admin</a>
@@ -33,19 +33,19 @@
         <h2 class="text-white display-4">Categorias de juegos</h2>
         <div class="encabezadoCatergoria w-100 mx-auto text-center">
             <h3 class="bg-dark text-white border border-white p-2">Carreras</h3>
-            <a href="carreras.html"><img src="img/carreras.jpg" class="img-fluid" alt="Carreras"></a>
+            <a href="{% url 'carrera' %}"><img src="{% static 'img/carreras.jpg' %} " class="img-fluid" alt="Carreras"></a>
 
             <h3 class="bg-dark text-white border border-white p-2">ROL y RPG</h3>
-            <a href="rol.html"><img src="img/rol.jpg" class="img-fluid" alt="ROL y RPG"></a>
+            <a href="{% url 'rol' %}"><img src="{% static 'img/rol.jpg' %} " class="img-fluid" alt="ROL y RPG"></a>
 
             <h3 class="bg-dark text-white border border-white p-2">Disparos</h3>
-            <a href="disparos.html"><img src="img/disparos.jpeg" class="img-fluid" alt="Disparos"></a>
+            <a href="{% url 'disparo' %}"><img src="{% static 'img/disparos.jpeg' %} " class="img-fluid" alt="Disparos"></a>
 
             <h3 class="bg-dark text-white border border-white p-2">Plataforma</h3>
-            <a href="plataforma.html"><img src="img/plataforma.jpg" class="img-fluid" alt="Plataforma"></a>
+            <a href="{% url 'plataforma' %}"><img src="{% static 'img/plataforma.jpg' %}" class="img-fluid" alt="Plataforma"></a>
 
             <h3 class="bg-dark text-white border border-white p-2">Peleas</h3>
-            <a href="peleas.html"><img src="img/peleas.jpg" class="img-fluid" alt="Peleas"></a>
+            <a href="{% url 'pelea' %}"><img src="{% static 'img/peleas.jpg' %}" class="img-fluid" alt="Peleas"></a>
         </div>
     </div>
   </div>

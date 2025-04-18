@@ -1,0 +1,24 @@
+/* -------------------------------------------
+  Archivo: css/estilos.css
+  Descripción: estilos personalizados para
+  complementar Bootstrap y mejorar la apariencia
+---------------------------------------------- */
+
+/* Cambia el color de fondo de toda la página */
+body {
+    background-color: #f4f7fa; /* color suave, más agradable visualmente */
+  }
+  
+  /* Estilos para el contenedor principal del formulario */
+  .container {
+    max-width: 720px; /* limita el ancho para que no se vea demasiado extendido en pantallas grandes */
+    background-color: white; /* fondo blanco para destacar el formulario */
+    padding: 30px; /* espacio interno alrededor del contenido */
+    border-radius: 12px; /* esquinas redondeadas del cuadro */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* sombra suave para dar efecto de elevación */
+  }
+  
+  /* Aplica negrita a las etiquetas de los campos del formulario */
+  .form-label {
+    font-weight: bold; /* resalta el texto de las etiquetas */
+  }

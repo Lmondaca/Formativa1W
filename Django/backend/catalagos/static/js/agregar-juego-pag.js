@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filteredGames.forEach(game => {
         container.innerHTML += `
             <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
-                <img src="${game.image}" alt="${game.name}" class="img-fluid rounded shadow mb-3">
+                <img src="{% static '${game.image}' %}" alt="${game.name}" class="img-fluid rounded shadow mb-3">
                 <div class="card-body">
                 <h2 class="text-white card-title">${game.name}</h2>
                 <p class="text-white card-text">${game.description}</p>

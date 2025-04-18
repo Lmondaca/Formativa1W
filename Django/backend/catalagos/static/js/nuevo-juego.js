@@ -52,7 +52,7 @@ $(document).ready(function() {
         }
 
         if (hasErrors) return;
-
+//TODO: TRAER esto para que se maneje por interno ya que no se puede redireccionar 
         const reader = new FileReader();
         reader.onload = function(e) {
             const newGame = {
@@ -70,7 +70,7 @@ $(document).ready(function() {
             localStorage.setItem('games', JSON.stringify(games));
 
             alert('Juego agregado exitosamente!');
-            window.location.href = categoria.toLowerCase() + '.html';
+            window.location.href = categoria.toLowerCase();
         };
         reader.readAsDataURL(imagen);
     });

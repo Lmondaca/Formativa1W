@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peleas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style_categorias.css">
+   
+    <link rel="stylesheet" href="{% static 'css/style_categorias.css' %}">
 </head>
 
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Games LF</a>
+        <a class="navbar-brand" href="{% url 'catalogo' %}">Games LF</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,11 +23,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" href="index.html">Inicio</a>
-                <a class="nav-link" href="login.html">Iniciar Sesión</a>
-                <a class="nav-link" href="registro.html">Registro</a>
-                <a class="nav-link" href="perfil.html">Perfil</a>
-                <a class="nav-link" href="nuevo-juego.html" id="adminLink" style="display: none;">Agregar Juego</a>
+                <a class="nav-link" href="{% url 'catalogo' %}">Inicio</a>
+                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                <a class="nav-link" href="{% url 'registro' %}">Registro</a>
+                <a class="nav-link" href="{% url 'perfil' %}">Perfil</a>
+                <a class="nav-link" href="{% url 'crearJuego' %}" id="adminLink" style="display: none;">Agregar Juego</a>
             </div>
             <div class="ms-auto">
                 <a href="?admin=true" class="btn btn-outline-light" id="adminBtn">Modo Admin</a>
@@ -39,7 +41,7 @@
     <section class="container my-5">
         <div class="descripcionCatergoria text-center">
             <h1 class="text-white">Peleas</h1>
-            <img src="img/fondo peleas.jpeg" alt="Imagen de peleas" class="img-fluid rounded shadow mb-4">
+            <img src="{% static 'img/fondo peleas.jpeg' %}" alt="Imagen de peleas" class="img-fluid rounded shadow mb-4">
             <p class="text-white">
                 Los videojuegos de peleas son un género centrado en combates cuerpo a cuerpo entre dos o más personajes 
                 en escenarios cerrados. Los jugadores utilizan combos, movimientos especiales y estrategias defensivas 
@@ -49,7 +51,7 @@
         </div>
 
         <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
-            <img src="img/mortal kombat 11.jpeg" alt="Mortal Kombat 11" class="img-fluid rounded shadow mb-3">
+            <img src="{% static 'img/mortal kombat 11.jpeg' %}" alt="Mortal Kombat 11" class="img-fluid rounded shadow mb-3">
             <div class="card-body">
             <h2 class="text-white card-title">Mortal Kombat 11</h2>
             <p class="text-white card-text">
@@ -68,7 +70,7 @@
         </div>
 
         <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
-            <img src="img/street fighter 5.jpg" alt="Street Fighter 5" class="img-fluid rounded shadow mb-3">
+            <img src="{% static 'img/street fighter 5.jpg' %}" alt="Street Fighter 5" class="img-fluid rounded shadow mb-3">
             <div class="card-body">
             <h2 class="text-white card-title">Street Fighter 5</h2>
             <p class="text-white card-text">
@@ -111,8 +113,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/canasta.js"></script>
-    <script src="js/agregar-juego-pag.js"></script>
+    <script src="{% static 'js/canasta.js' %}"></script>
+    <script src="{% static 'js/agregar-juego-pag.js' %}"></script>
+    
 </body>
 
 </html>
