@@ -4,6 +4,9 @@ from django.shortcuts import render
 def catalogo(request):
     return render(request, 'index.html')
 
+def categoria(request):
+    return render(request, 'categoria.html')
+
 def carrera(request):
     return render(request, 'carreras.html')
 
