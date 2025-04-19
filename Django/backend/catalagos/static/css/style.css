@@ -3,6 +3,11 @@
     padding: 0;
     margin: 0;
     font-family: JetBrains Mono;
+    color: #fcfbfc !important; 
+}
+
+body {
+    background-color: #050709;
 }
 
 a.nav-link {
@@ -23,3 +28,53 @@ a.nav-link {
 .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23fcfbfc' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
+
+.btn-custom {
+    background-color: #2cb9e7 !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(44, 185, 231, 0.4);
+    background-color: #24a1c9 ;
+}
+
+
+.btn-custom:hover::after {
+    left: 120%;
+}
+
+
+/* estilo de cajas index */
+
+.juego-caja {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #000;
+}
+
+@media (max-width: 768px) {
+    .juego-caja {
+        height: 150px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
