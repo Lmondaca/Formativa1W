@@ -55,11 +55,11 @@ a.nav-link {
 /* estilo de cajas index */
 
 .card-body {
-    min-height: 220px; /* Altura mínima para contener el contenido */
+    min-height: 220px;
 }
 
 .button-container {
-    margin-top: auto; /* Empuja el contenedor hacia abajo */
+    margin-top: auto;
     width: 100%;
 }
 
@@ -68,9 +68,8 @@ a.nav-link {
     object-fit: cover;
 }
 
-/* Mantener el mismo alto para todas las descripciones */
 .card-text {
-    min-height: 60px; /* Ajusta según necesidad */
+    min-height: 60px;
     overflow: hidden;
 }
 
