@@ -54,10 +54,24 @@ a.nav-link {
 
 /* estilo de cajas index */
 
-.juego-caja {
-    height: 200px;
+.card-body {
+    min-height: 220px; /* Altura mínima para contener el contenido */
+}
+
+.button-container {
+    margin-top: auto; /* Empuja el contenedor hacia abajo */
+    width: 100%;
+}
+
+.game-thumbnail {
+    height: 180px;
     object-fit: cover;
-    border-radius: 0;
+}
+
+/* Mantener el mismo alto para todas las descripciones */
+.card-text {
+    min-height: 60px; /* Ajusta según necesidad */
+    overflow: hidden;
 }
 
 .card {
@@ -70,7 +84,7 @@ a.nav-link {
 }
 
 @media (max-width: 768px) {
-    .juego-caja {
+    .game-thumbnail {
         height: 150px;
     }
     
