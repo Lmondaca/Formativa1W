@@ -1,64 +1,28 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: JetBrains Mono;
+    color: #fcfbfc !important; 
 }
 
 body {
-    background-image: url("../img/home.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    margin-top: 50px;
-}
-.wrap{
-    
-    backdrop-filter: blur(10px);
-    
+    background-color: #050709;
 }
 
-.encabezadoCatergoria {
-    width: 100%;
-    max-width: 500px;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
+nav {
+    background-color: #050709;
 }
 
-h2 {
-    color: #fff;
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+a.nav-link {
+    color: #fcfbfc;
 }
 
-h3 {
-    background-color: black;
-    color: #fff;
-    border: 2px solid white;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+.navbar-nav .nav-link:hover {
+    color: #2cb9e7 !important;
 }
 
-img {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    margin-bottom: 20px;
-    border: 2px solid white;
-    border-radius: 10px;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover img {
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+.navbar-nav .nav-link:hover i {
+    color: #2cb9e7 !important;
 }
 
 .admin-only {
@@ -67,3 +31,99 @@ a:hover img {
 
 .admin-only.show {
     display: block !important; }
+
+.navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23fcfbfc' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+.btn-custom {
+    background-color: #2cb9e7 !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(44, 185, 231, 0.4);
+    background-color: #24a1c9 ;
+}
+
+
+.btn-custom:hover::after {
+    left: 120%;
+}
+
+
+/* estilo de cajas */
+
+.card-body {
+    min-height: 220px;
+}
+
+.button-container {
+    margin-top: auto;
+    width: 100%;
+}
+
+.game-thumbnail {
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-text {
+    min-height: 60px;
+    overflow: hidden;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #000;
+}
+
+@media (max-width: 768px) {
+    .game-thumbnail {
+        height: 150px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+.hover-ft:hover{
+    cursor: pointer;
+    color: #363d3f !important;
+    transition: all 0.5s ease ;
+}
+.social-icon {
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.footer a {
+    text-decoration: none !important;
+}
+
+@media (max-width: 768px) {
+    .footer .col-6 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer h5 {
+        font-size: 1.1rem;
+    }
+}

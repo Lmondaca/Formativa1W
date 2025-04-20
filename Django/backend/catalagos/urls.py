@@ -1,8 +1,10 @@
 
 from django.urls import path
-from .views import catalogo, carrera, disparo, pelea, plataforma, rol, login, registro, perfil, crearJuego, mostrar
+from .views import catalogo, categoria, carrera, disparo, pelea, plataforma, rol, login, registro, perfil, crearJuego, mostrar
+
 urlpatterns = [
     path('inicio', catalogo, name="catalogo"),
+    path('categoria', categoria, name="categoria"),
     path('carreras', carrera, name="carrera"),
     path('disparos', disparo, name="disparo"),
     path('peleas', pelea, name="pelea"),

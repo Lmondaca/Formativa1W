@@ -4,9 +4,11 @@ from .models import Juego
 # Create your views here.
 def catalogo(request):
     #para agregar elementos desde la BD
-    
     contexto = {'saludo': 'variable para usar en la vista'}
     return render(request, 'index.html', contexto)
+
+def categoria(request):
+    return render(request, 'categoria.html')
 
 def mostrar(request, id):
     #lista de libros que se obtiene de la base de datos
@@ -18,6 +20,7 @@ def mostrar(request, id):
         return render(request, 'mostrar.html', contexto)
     else:
         return redirect('carrera')
+
 def carrera(request):
     juegos = Juego.objects.all()
     # juego1 = {'nombre': 'mario1','imagen':'img/portadamario1.png'}
