@@ -131,3 +131,51 @@ a.nav-link {
 .bg-carrito-badge {
     background-color: #2cb9e7 !important;
 }
+
+
+/* login */
+.login-image-container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrap-img {
+    height: 100%;
+    width: 100%;
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-control {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff !important;
+    padding: 12px 20px;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+
+@media (max-width: 768px) {
+    .login-section {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .login-image-container {
+        height: 40vh;
+    }
+    
+    .login-form {
+        margin: 2rem;
+        backdrop-filter: blur(8px);
+    }
+}
