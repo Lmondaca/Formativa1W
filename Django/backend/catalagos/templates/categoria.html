@@ -59,10 +59,15 @@
                         Perfil
                     </a>
 
-
                     <a class="nav-link" href="{% url 'crearJuego' %}" id="adminLink" style="display: none;">
                         <i class="fi fi-tr-add"></i>
                         Agregar Juego</a>
+
+                    <a class="btn position-relative" id="cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fi fi-tr-basket-shopping-simple"></i>
+                        <span id="cart-count"
+                            class="badge bg-carrito-badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+                    </a>
                 </div>
                 <div class="ms-lg-auto ps-lg-3">
                     <a href="?admin=true" class="btn btn-custom d-flex align-items-center gap-2" id="adminBtn">
@@ -74,57 +79,53 @@
         </div>
     </nav>
 
-
     <div class="container py-5">
         <h2 class="text-white display-4 mt-5 mb-5">Categorías de Juegos</h2>
-        
+
         <div class="row g-4">
 
 
             <!-- Carreras -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 border-0 bg-dark" style="background-color: #050709 !important;">
-                    <img src="{% static 'img/carreras.jpg' %}" class="card-img-top game-thumbnail"
-                        alt="Juego 1">
+                    <img src="{% static 'img/carreras.jpg' %}" class="card-img-top game-thumbnail" alt="Juego 1">
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title text-white">Carreras</h2>
                         <div class="button-container mt-2">
                             <a href="{% url 'carrera' %}" class="btn btn-custom add-to-cart">
-                                Ver categoría 
+                                Ver categoría
                                 <i class="fi fi-tr-angle-right" style="background-color: #00000000;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-    
+
             <!-- ROL y RPG -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 border-0 bg-dark" style="background-color: #050709 !important;">
-                    <img src="{% static 'img/rol.jpg' %}" class="card-img-top game-thumbnail"
-                        alt="Juego 1">
+                    <img src="{% static 'img/rol.jpg' %}" class="card-img-top game-thumbnail" alt="Juego 1">
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title text-white">Rol y RPG</h2>
                         <div class="button-container mt-2">
                             <a href="{% url 'rol' %}" class="btn btn-custom add-to-cart">
-                                Ver categoría 
+                                Ver categoría
                                 <i class="fi fi-tr-angle-right" style="background-color: #00000000;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-    
+
             <!-- Disparos -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 border-0 bg-dark" style="background-color: #050709 !important;">
-                    <img src="{% static 'img/disparos.jpeg' %}" class="card-img-top game-thumbnail"
-                        alt="Juego 1">
+                    <img src="{% static 'img/disparos.jpeg' %}" class="card-img-top game-thumbnail" alt="Juego 1">
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title text-white">Disparos</h2>
                         <div class="button-container mt-2">
                             <a href="{% url 'disparo' %}" class="btn btn-custom add-to-cart">
-                                Ver categoría 
+                                Ver categoría
                                 <i class="fi fi-tr-angle-right" style="background-color: #00000000;"></i>
                             </a>
                         </div>
@@ -135,30 +136,28 @@
             <!-- Plataforma -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 border-0 bg-dark" style="background-color: #050709 !important;">
-                    <img src="{% static 'img/plataforma.jpg' %}" class="card-img-top game-thumbnail"
-                        alt="Juego 1">
+                    <img src="{% static 'img/plataforma.jpg' %}" class="card-img-top game-thumbnail" alt="Juego 1">
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title text-white">Plataformas</h2>
                         <div class="button-container mt-2">
                             <a href="{% url 'plataforma' %}" class="btn btn-custom add-to-cart">
-                                Ver categoría 
+                                Ver categoría
                                 <i class="fi fi-tr-angle-right" style="background-color: #00000000;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-    
+
             <!-- Peleas -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 border-0 bg-dark" style="background-color: #050709 !important;">
-                    <img src="{% static 'img/peleas.jpg' %}" class="card-img-top game-thumbnail"
-                        alt="Juego 1">
+                    <img src="{% static 'img/peleas.jpg' %}" class="card-img-top game-thumbnail" alt="Juego 1">
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title text-white">Peleas</h2>
                         <div class="button-container mt-2">
                             <a href="{% url 'pelea' %}" class="btn btn-custom add-to-cart">
-                                Ver categoría 
+                                Ver categoría
                                 <i class="fi fi-tr-angle-right" style="background-color: #00000000;"></i>
                             </a>
                         </div>
@@ -171,11 +170,11 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const isAdmin = urlParams.has('admin');
-        
+
         document.getElementById('adminLink').style.display = isAdmin ? 'block' : 'none';
-        
+
         document.getElementById('adminBtn').textContent = isAdmin ? 'Modo Usuario' : 'Modo Admin';
-        
+
         document.getElementById('adminBtn').href = isAdmin ? window.location.pathname : '?admin=true';
     </script>
 
@@ -188,8 +187,8 @@
 
             <div class="col-12 col-md-3 mb-4 mb-md-0">
                 <div class="text-center text-md-start">
-                    <img src="{% static 'img/gamelf-white.png' %}" alt="Logo" 
-                         class="mb-3 img-fluid" style="max-height: 60px;">
+                    <img src="{% static 'img/gamelf-white.png' %}" alt="Logo" class="mb-3 img-fluid"
+                        style="max-height: 60px;">
                     <p class="text-white mb-0">Los mejores juegos digitales aquí.</p>
                 </div>
             </div>
@@ -249,4 +248,5 @@
         </div>
     </div>
 </footer>
+
 </html>

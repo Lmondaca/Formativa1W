@@ -157,8 +157,8 @@ a.nav-link {
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff !important;
     padding: 12px 20px;
+    transition: all 0.3s ease;
 }
-
 .form-control::placeholder {
     color: rgba(255, 255, 255, 0.6) !important;
 }
@@ -178,4 +178,48 @@ a.nav-link {
         margin: 2rem;
         backdrop-filter: blur(8px);
     }
+}
+
+/* Registro */
+.registro-seccion {
+    height: 100vh;
+    padding-top: 80px;
+}
+
+.registro-form {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #2cb9e7;
+    box-shadow: 0 0 0 0.25rem rgba(44, 185, 231, 0.25);
+}
+
+@media (max-width: 768px) {
+    .registro-seccion {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    
+    .registro-form {
+        margin: 1rem;
+        backdrop-filter: blur(8px);
+    }
+}
+
+/* Perfil */
+.perfil-form {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+/* Campos deshabilitados */
+.form-control:disabled {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    opacity: 0.8;
 }
