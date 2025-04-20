@@ -62,54 +62,25 @@
                     Ejemplos populares incluyen Gran Turismo, Need for Speed y Mario Kart.
                 </p>
             </div>
-
+            {% for ju in juegos %}
             <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
-                <img src="{% static 'img/needforspeed.webp' %}" alt="Need for Speed" class="img-fluid rounded shadow mb-3">
+                <img src="{% static ju.image %}" alt="{{ju.nombre}}" class="img-fluid rounded shadow mb-3">
                 <div class="card-body">
-                    <h2 class="text-white card-title">Need for Speed Hot Pursuit Remastered</h2>
+                    <h2 class="text-white card-title">{{ju.nombre}}</h2>
                     <p class="text-white card-text">
-                        Siente la emoción de la persecución y la adrenalina al huir en Need for Speed™ Hot Pursuit
-                        Remastered en
-                        Nintendo Switch™. Siente la sensación de ir a toda velocidad como forajido y como policía en los
-                        autos
-                        de alto rendimiento más populares del mundo. Supera la presión o derriba a infractores con las
-                        armas
-                        tácticas que tienes en esta experiencia de carreras competitiva y tensa. Esta es la presentación
-                        del
-                        juego aclamado por la crítica, Need for Speed Ultimate Edition de Criterion Games, actualizado
-                        con
-                        imágenes mejoradas, multijugador con plataforma cruzada, competencia asincrónica de Autolog y
-                        todos los
-                        DLC adicionales. Es hora de reanudar la persecución.
+                        {{ju.descripcion}}
                     </p>
                     <div class="precio_boton d-flex justify-content-between align-items-center">
-                        <h2 class="text-white card-title" hidden="true">Need for Speed Hot Pursuit Remastered</h2>
-                        <h2 class="precio_valor" hidden="true">56900</h2>
-                        <h4 class="text-white m-0"><span>CLP$</span> 56.900</h4>
+                        <h2 class="text-white card-title" hidden="true">{{ju.nombre}}</h2>
+                        <h2 class="precio_valor" hidden="true">{{ju.precio}}</h2>
+                        <h4 class="text-white m-0"><span>CLP$</span> {{ju.precio}}</h4>
                         <button class="btn btn-primary add-to-cart">Comprar</button>
                     </div>
                 </div>
             </div>
-
-            <div class="descripcionJuegos1 bg-dark p-4 rounded shadow mb-4 card">
-                <img src="{% static 'img/mariokart.jpg' %}" alt="Mario Kart" class="img-fluid rounded shadow mb-3">
-                <div class="card-body">
-                    <h2 class="text-white card-title">Mario Kart™ 8 Deluxe</h2>
-                    <p class="text-white card-text">
-                        ¡Acelera a través de las pistas del Reino Champiñón bajo el agua, en el cielo, de cabeza y sin
-                        gravedad,
-                        y llega a la meta para obtener la victoria! Prepara motores en el modo multijugador local*, en
-                        los
-                        torneos en línea** del juego, en el modo batalla que ha sido mejorado ¡y más!
-                    </p>
-                    <div class="precio_boton d-flex justify-content-between align-items-center">
-                        <h2 class="text-white card-title" hidden="true">Mario Kart™ 8 Deluxe</h2>
-                        <h2 class="precio_valor" hidden="true">31900</h2>
-                        <h4 class="text-white m-0">CLP$ 31.900</h4>
-                        <button class="btn btn-primary add-to-cart">Comprar</button>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+            
+          <!--TODO: IMPLEMENTAR ESTA PARTE PARA agregar en BD  -->
         <!-- agregar nuevos juegos -->
         <div id="agregar-juego" class="mt-4">
         </div>
