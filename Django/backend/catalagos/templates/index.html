@@ -59,10 +59,14 @@
                         Perfil
                     </a>
 
-
                     <a class="nav-link" href="{% url 'crearJuego' %}" id="adminLink" style="display: none;">
                         <i class="fi fi-tr-add"></i>
                         Agregar Juego</a>
+
+                        <a class="btn position-relative" id="cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fi fi-tr-basket-shopping-simple"></i>
+                            <span id="cart-count" class="badge bg-carrito-badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+                        </a>
                 </div>
                 <div class="ms-lg-auto ps-lg-3">
                     <a href="?admin=true" class="btn btn-custom d-flex align-items-center gap-2" id="adminBtn">

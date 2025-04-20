@@ -127,3 +127,7 @@ a.nav-link {
         font-size: 1.1rem;
     }
 }
+
+.bg-carrito-badge {
+    background-color: #2cb9e7 !important;
+}
