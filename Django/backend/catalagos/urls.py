@@ -2,6 +2,7 @@
 from django.urls import path
 from .views import catalogo, categoria, carrera, disparo, pelea, plataforma, rol, login, registro, perfil, crearJuego, mostrar
 
+
 urlpatterns = [
     path('inicio', catalogo, name="catalogo"),
     path('categoria', categoria, name="categoria"),
@@ -15,4 +16,7 @@ urlpatterns = [
     path('perfil', perfil, name="perfil"),
     path('crear-juego', crearJuego, name="crearJuego"),
     path('juego/<int:id>', mostrar, name="mostrar"),
+    
+    # path('form-usuario',form_usuario,name='form_usuario'),
+
 ]

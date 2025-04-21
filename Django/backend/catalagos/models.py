@@ -24,7 +24,21 @@ class Juego(models.Model):
     precio = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Precio del juego')
     image = models.CharField(max_length=100, verbose_name='direccion de la portada del juego')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    imagen= models.ImageField(upload_to='juegos/', null=True, blank=True)
 
     def __str__(self):
         return self.idJuego
+    
+class Usuario(models.Model):
+    
+    nombreCompleto =models.CharField(max_length=60, verbose_name='nombre completo del usuario')
+    nombreUsuario =models.CharField(max_length=60, verbose_name='Alias del usuario')
+    correo = models.EmailField(unique=True, verbose_name='correo personal')
+    clave = models.CharField(max_length=100 , verbose_name='password')
+    fechaNacimiento = models.DateField(verbose_name='Fecha de nacimiento')
+    direccion = models.CharField(max_length=300 , verbose_name='direccion')
+    
+
+    def __str__(self):
+        return self.nombreUsuario
     
