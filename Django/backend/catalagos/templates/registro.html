@@ -86,10 +86,11 @@
                     <div class="registro-form p-5 rounded-4">
                         <h1 class="text-center mb-4 text-white">Crear Cuenta</h1>
                         
-                        <form id="formularioRegistro" class="needs-validation" novalidate>
+                        <form id="formularioRegistr" method="post" class="needs-validation" novalidate>
                             <div class="row g-3">
-
-                                <div class="col-md-12">
+                                {% csrf_token %}
+                                {{ form }}
+                                <!-- <div class="col-md-12">
                                     <label for="nombreCompleto" class="form-label text-white">Nombre completo</label>
                                     <input type="text" 
                                            class="form-control bg-transparent text-white" 
@@ -155,7 +156,7 @@
                                            class="form-control bg-transparent text-white" 
                                            id="direccion" 
                                            name="direccion">
-                                </div>
+                                </div> -->
 
                                 <div class="col-12">
                                     <div class="d-grid gap-3 mt-4">

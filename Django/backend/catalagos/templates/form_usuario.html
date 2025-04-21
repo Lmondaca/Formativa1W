@@ -1,0 +1,32 @@
+
+
+{% for field in form %}
+<div class="col-md-12">
+    <div class="form-label text-white">
+        {{ field.label_tag }}
+    </div>
+    <div class="form-control bg-transparent text-black">
+        {{ field }}
+    </div>
+    <div class="invalid-feedback">
+        {{ field.errors }}
+    </div>
+    <!-- <label for="nombreCompleto" class="form-label text-white">Nombre completo</label> -->
+    <!-- <input type="text" 
+            class="form-control bg-transparent text-white" 
+            id="nombreCompleto" 
+            name="nombreCompleto"
+            required>
+    <div class="invalid-feedback" id="errorNombre"></div> -->
+</div>
+{% endfor %}
+<!-- 
+<div class="col-md-6">
+    <label for="nombreUsuario" class="form-label text-white">Usuario</label>
+    <input type="text" 
+            class="form-control bg-transparent text-white" 
+            id="nombreUsuario" 
+            name="nombreUsuario"
+            required>
+    <div class="invalid-feedback" id="errorUsuario"></div>
+</div>

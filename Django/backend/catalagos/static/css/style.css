@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: JetBrains Mono;
-    color: #fcfbfc !important; 
+
 }
 
 body {
@@ -155,7 +155,7 @@ a.nav-link {
 
 .form-control {
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff !important;
+    color: #000000 !important;
     padding: 12px 20px;
     transition: all 0.3s ease;
 }
