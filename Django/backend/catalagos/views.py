@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect
-from .models import Juego
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Juego, Usuario
+from .forms import UsuarioForm
 
 # Create your views here.
 def catalogo(request):
     #para agregar elementos desde la BD
     contexto = {'saludo': 'variable para usar en la vista'}
+    #controlar la sesion
     return render(request, 'index.html', contexto)
 
 def categoria(request):
@@ -50,7 +52,20 @@ def login(request):
     return render(request, 'login.html')
 
 def registro(request):
-    return render(request, 'registro.html')
+    form = UsuarioForm()
+    rendered_form = form.render("form_usuario.html")
+    datos = {
+        'form': rendered_form
+    }
+    if request.method == 'POST':
+        formulario = UsuarioForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            
+            datos['mensaje']= "Guardados correctamente"
+            return redirect('registro')
+ 
+    return render(request, 'registro.html', datos)
 
 
 def perfil(request):
@@ -58,3 +73,33 @@ def perfil(request):
 
 def crearJuego(request):
     return render(request, 'nuevo-juego.html')
+
+# def form_usuario(request):
+#     form = UsuarioForm()
+#     rendered_form = form.render("form_usuario.html")
+#     datos = {
+#         'form': rendered_form
+#     }
+#     if request.method == 'POST':
+#         formulario = UsuarioForm(request.POST)
+#         if formulario.is_valid:
+#             formulario.save()
+
+#             datos['mensaje']= "Guardados correctamente"
+#     return render(request, 'registro.html', datos)
+
+def editar_usuario(request, pk):
+    usuario = get_object_or_404(Usuario, pk=pk)
+    datos = {
+        'form': UsuarioForm()
+    }
+    if request.method == 'POST':
+        formulario = UsuarioForm(request.POST, instance=usuario)
+        if formulario.is_valid:
+            formulario.save()
+
+            datos['mensaje']= "Guardados correctamente"
+            return redirect('perfil')
+    else:
+        datos['form']=UsuarioForm(instance=usuario)
+    return render(request, 'form_usuario.html', datos)
