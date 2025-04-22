@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -70,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
+load_dotenv()
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -79,9 +80,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': '(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-valparaiso-1.oraclecloud.com))(connect_data=(service_name=g0022de2e3ebc85_cmb0n6s7y4so8ofj_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.sa-valparaiso-1.oraclecloud.com, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))',
         'USER': 'WEB1',
-        'PASSWORD': 'ClaveOracle123',
+        'PASSWORD': os.getenv("DATABASE_PASSWORD"),
         'OPTIONS':{
-            'wallet_location': os.path.join(BASE_DIR,'D:/LucasDuoc/semana1/Formativa1W/wallet/Wallet_CMB0N6S7Y4SO8OFJ'),
+            'wallet_location': os.path.join(BASE_DIR, os.getenv("WALLET_LOCATION")),
+            'wallet_password': os.getenv("WALLET_PASSWORD")
            
         }
     }
@@ -139,4 +141,4 @@ SESSION_COOKIE_NAME = 'sessionid'
 SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_PATH = '/'
-LOGIN_REDIRECT_URL = '/catalogo'
+LOGIN_REDIRECT_URL = '/inicio'
