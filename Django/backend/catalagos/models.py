@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django import forms
 
 # Create your models here.
 class Categoria(models.Model):
@@ -27,14 +29,14 @@ class Juego(models.Model):
     imagen= models.ImageField(upload_to='juegos/', null=True, blank=True)
 
     def __str__(self):
-        return self.idJuego
+        return self.nombre
     
 class Usuario(models.Model):
-    
+    user= models.OneToOneField(User, on_delete=models.CASCADE ,null=True)
     nombreCompleto =models.CharField(max_length=60, verbose_name='nombre completo del usuario')
     nombreUsuario =models.CharField(max_length=60, verbose_name='Alias del usuario')
     correo = models.EmailField(unique=True, verbose_name='correo personal')
-    clave = models.CharField(max_length=100 , verbose_name='password')
+    clave = models.CharField(max_length=128 , verbose_name='password')
     fechaNacimiento = models.DateField(verbose_name='Fecha de nacimiento')
     direccion = models.CharField(max_length=300 , verbose_name='direccion')
     

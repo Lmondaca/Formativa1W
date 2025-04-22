@@ -71,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
+load_dotenv()
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -85,7 +85,9 @@ DATABASES = {
         'PASSWORD': os.getenv("DATABASE_PASSWORD"),
         'OPTIONS':{
             'wallet_location': os.path.join(BASE_DIR, os.getenv("WALLET_LOCATION")),
+
             'wallet_password': os.getenv("WALLET_PASSWORD"),
+
         }
     }
 }
@@ -131,3 +133,17 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'catalogos/static'),)
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_URL='/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+
+SESSION_COOKIE_AGE = 60 * 60 *1 # 1 HORA
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_SAVE_EVERY_REQUEST = False
+SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_PATH = '/'
+LOGIN_REDIRECT_URL = '/inicio'
+
