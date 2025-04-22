@@ -92,7 +92,11 @@
                 </p>
             </div>
             <div class="m-3" style="background-color: #00000000;">
-                <button class="btn btn-custom">Comprar Ahora | $31.900</button>
+                <button class="btn btn-custom add-to-cart" 
+                data-item="World of Warfcraft: Dragonflight" 
+                data-price="31900">
+            Comprar Ahora | $31.900
+        </button>
             </div>
         </div>
     </div>
@@ -102,38 +106,45 @@
         <h1 class="mb-4 text-white">En Tendencia Ahora</h1>
 
         <div class="row g-4">
-            <!-- Juego 1 -->
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 border-0 bg-dark">
-                    <img src="{% static 'img/needforspeed.webp' %}" class="card-img-top game-thumbnail" alt="Juego 1">
-                    <div class="card-body d-flex flex-column" style="background-color: #050709 !important;">
-                        <h5 class="card-title text-white">Need for Speed Hot Pursuit Remastered</h5>
-                        <p class="card-text text-muted flex-grow-1" style="color: #fcfbfc85 !important;">
-                            Siente la emoción de la persecución y la adrenalina al huir en Need for Speed™ Hot Pursuit
-                            Remastered en Nintendo Switch™.
-                        </p>
-                        <div class="button-container mt-2">
-                            <button type="button" class="btn btn-custom add-to-cart">$56.900</button>
-                        </div>
-                    </div>
-                </div>
+<!-- Juego 1 -->
+<div class="col-12 col-md-6 col-lg-3">
+    <div class="card h-100 border-0 bg-dark">
+        <img src="{% static 'img/needforspeed.webp' %}" class="card-img-top game-thumbnail" alt="Juego 1">
+        <div class="card-body d-flex flex-column" style="background-color: #050709 !important;">
+            <h5 class="card-title text-white">Need for Speed Hot Pursuit Remastered</h5>
+            <p class="card-text text-muted flex-grow-1" style="color: #fcfbfc85 !important;">
+                Siente la emoción de la persecución y la adrenalina al huir en Need for Speed™ Hot Pursuit Remastered.
+            </p>
+            <div class="button-container mt-2">
+                <button class="btn btn-custom add-to-cart" 
+                        data-item="Need for Speed Hot Pursuit Remastered" 
+                        data-price="56900">
+                    $56.900
+                </button>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Juego 2 -->
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 border-0 bg-dark">
-                    <img src="{% static 'img/call of duty.webp' %}" class="card-img-top game-thumbnail" alt="Juego 1">
-                    <div class="card-body d-flex flex-column" style="background-color: #050709 !important;">
-                        <h5 class="card-title text-white">Call of Duty Black Ops</h5>
-                        <p class="card-text text-muted flex-grow-1" style="color: #fcfbfc85 !important;">
-                            Call of Duty: Black Ops es un juego de disparos en primera persona (FPS) lanzado en 2010.
-                        </p>
-                        <div class="button-container mt-2">
-                            <button type="button" class="btn btn-custom add-to-cart">$31.900</button>
-                        </div>
-                    </div>
-                </div>
+<!-- Juego 2 -->
+<div class="col-12 col-md-6 col-lg-3">
+    <div class="card h-100 border-0 bg-dark">
+        <img src="{% static 'img/call of duty.webp' %}" class="card-img-top game-thumbnail" alt="Juego 2">
+        <div class="card-body d-flex flex-column" style="background-color: #050709 !important;">
+            <h5 class="card-title text-white">Call of Duty Black Ops</h5>
+            <p class="card-text text-muted flex-grow-1" style="color: #fcfbfc85 !important;">
+                Call of Duty: Black Ops es un juego de disparos en primera persona (FPS) lanzado en 2010.
+            </p>
+            <div class="button-container mt-2">
+                <button class="btn btn-custom add-to-cart" 
+                        data-item="Call of Duty Black Ops" 
+                        data-price="31900">
+                    $31.900
+                </button>
             </div>
+        </div>
+    </div>
+</div>
 
             <!-- Juego 3 -->
             <div class="col-12 col-md-6 col-lg-3">
@@ -148,7 +159,11 @@
                             con un elenco variado de personajes icónicos como Ryu, Chun-Li y Ken.
                         </p>
                         <div class="button-container mt-2">
-                            <button type="button" class="btn btn-custom add-to-cart">$31.900</button>
+                            <button class="btn btn-custom add-to-cart" 
+                            data-item="Street Fighter 5" 
+                            data-price="31900">
+                        $31.900
+                    </button>
                         </div>
                     </div>
                 </div>
@@ -167,13 +182,48 @@
                             para rescatar a la Princesa Peach de Bowser.
                         </p>
                         <div class="button-container mt-2">
-                            <button type="button" class="btn btn-custom add-to-cart">$49.900</button>
+                            <button class="btn btn-custom add-to-cart" 
+                            data-item="Super Marios Odyssey" 
+                            data-price="31900">
+                        $49.900
+                    </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog ajuste-cuadro">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-white" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" style="background-color: #2cb9e7 !important;" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <h5 id="total_confirm" class="text-white">Total: CLP$0</h5>
+                        <button id="clear-cart" class="btn btn-custom">Vaciar Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
@@ -186,6 +236,8 @@
         document.getElementById('adminBtn').href = isAdmin ? window.location.pathname : '?admin=true';
     </script>
 
+
+    <script src="{% static 'js/canasta.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

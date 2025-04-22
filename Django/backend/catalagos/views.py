@@ -29,29 +29,44 @@ def mostrar(request, id):
         return redirect('carrera')
 
 def carrera(request):
-    juegos = Juego.objects.all()
-    # juego1 = {'nombre': 'mario1','imagen':'img/portadamario1.png'}
-    # juego2 = {'nombre': 'mario2','imagen':'img/portadamario2.png'}
-    # juego3 = {'nombre': 'mario3','imagen':'img/portadamario3.png'}
-    # juegos.append(juego1)
-    # juegos.append(juego2)
-    # juegos.append(juego3)
-    contexto = {'saludo': 'variable para usar en la vista',
-                'juegos': juegos
-                }
+    juegos = Juego.objects.filter(categoria_id=1)
+    contexto = {
+        'saludo': 'variable para usar en la vista',
+        'juegos': juegos
+    }
     return render(request, 'carreras.html', contexto)
 
 def disparo(request):
-    return render(request, 'disparos.html')
+    juegos = Juego.objects.filter(categoria_id=3)
+    contexto = {
+        'saludo': 'variable para usar en la vista',
+        'juegos': juegos
+    }    
+    return render(request, 'disparos.html', contexto)
 
 def pelea(request):
-    return render(request, 'peleas.html')
+    juegos = Juego.objects.filter(categoria_id=4)
+    contexto = {
+        'saludo': 'variable para usar en la vista',
+        'juegos': juegos
+    }        
+    return render(request, 'peleas.html', contexto)
 
 def plataforma(request):
-    return render(request, 'plataforma.html')
+    juegos = Juego.objects.filter(categoria_id=4)
+    contexto = {
+        'saludo': 'variable para usar en la vista',
+        'juegos': juegos
+    }    
+    return render(request, 'plataforma.html', contexto)
 
 def rol(request):
-    return render(request, 'rol.html')
+    juegos = Juego.objects.filter(categoria_id=2)
+    contexto = {
+        'saludo': 'variable para usar en la vista',
+        'juegos': juegos
+    }    
+    return render(request, 'rol.html', contexto)
 
 def login(request):
     return render(request, 'login.html')
