@@ -53,7 +53,7 @@ def pelea(request):
     return render(request, 'peleas.html', contexto)
 
 def plataforma(request):
-    juegos = Juego.objects.filter(categoria_id=4)
+    juegos = Juego.objects.filter(categoria_id=5)
     contexto = {
         'saludo': 'variable para usar en la vista',
         'juegos': juegos
