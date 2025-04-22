@@ -83,7 +83,15 @@ def registro(request):
 
 @login_required
 def perfil(request):
-    return render(request, 'perfil.html')
+    user = get_object_or_404(Usuario, correo=request.user.email)
+    datos = {
+        'nombreUser': request.user.username,
+        'correo': user.correo,
+        'nombreCompleto': user.nombreCompleto,
+        'fechaNaci': user.fechaNacimiento,
+        'direccion': user.direccion
+    }
+    return render(request, 'perfil.html', datos)
 
 def crearJuego(request):
     return render(request, 'nuevo-juego.html')
