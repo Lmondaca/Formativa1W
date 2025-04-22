@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fuente JetBrains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+
+    <!-- iconos -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+
+    <title>Games LF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'catalogo' %}">
+                <img src="{% static '/img/gamelf-white.png' %}" style="width: 150px !important; margin-right: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav align-items-center gap-3">
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'catalogo' %}">
+                        <i class="fi fi-tr-house-blank" style="font-size: 1.1rem;"></i>
+                        Inicio
+                    </a>
+
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'categoria' %}">
+                        <i class="fi fi-tr-category" style="font-size: 1.1rem;"></i>
+                        Categoría
+                    </a>
+
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'login' %}">
+                        <i class="fi fi-tr-sign-in-alt" style="font-size: 1.1rem;"></i>
+                        Iniciar Sesión
+                    </a>
+
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'registro' %}">
+                        <i class="fi fi-tr-clipboard-list" style="font-size: 1.1rem;"></i>
+                        Registro
+                    </a>
+
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'perfil' %}">
+                        <i class="fi fi-tr-clipboard-user" style="font-size: 1.1rem;"></i>
+                        Perfil
+                    </a>
+
+                    <a class="nav-link" href="{% url 'crearJuego' %}" id="adminLink" style="display: none;">
+                        <i class="fi fi-tr-add"></i>
+                        Agregar Juego</a>
+
+                        <a class="btn position-relative" id="cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fi fi-tr-basket-shopping-simple"></i>
+                            <span id="cart-count" class="badge bg-carrito-badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+                        </a>
+                </div>
+                <div class="ms-lg-auto ps-lg-3">
+                    <a href="?admin=true" class="btn btn-custom d-flex align-items-center gap-2" id="adminBtn">
+                        <i class="fi fi-tr-shield" style="font-size: 1.1rem;"></i>
+                        Modo Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Juego Principal -->
+    <div class="container position-relative">
+        <img src="{% static 'img/wow dragonflight.jpg' %}" class="img-fluid w-100 rounded" alt="Dragonflight">
+
+        <div class="position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-end"
+            style="background-color: rgba(0, 0, 0, 0)">
+
+            <div class="bg-dark p-3"
+                style="max-width: 400px; background-color: rgba(0, 0, 0, 0.517) !important; border-radius: 10px; ">
+                <p class="text-white mb-0" style="background-color: rgba(0, 0, 0, 0);">
+                    World of Warcraft: Dragonflight es la novena expansión de World of Warcraft, lanzada en 2022.
+                </p>
+            </div>
+            <div class="m-3" style="background-color: #00000000;">
+                <button class="btn btn-custom add-to-cart" 
+                data-item="World of Warfcraft: Dragonflight" 
+                data-price="31900">
+            Comprar Ahora | $31.900
+        </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tendencia -->
+    <div class="container mt-5">
+        <h1 class="mb-4 text-white">En Tendencia Ahora</h1>
+
+        <div class="row g-4">
+<!-- Juego 1 -->
+<div class="col-12 col-md-6 col-lg-3">
+    <div class="card h-100 border-0 bg-dark">
+        <img src="{% static 'img/needforspeed.webp' %}" class="card-img-top game-thumbnail" alt="Juego 1">
+        <div class="card-body d-flex flex-column" style="background-color: #050709 !important;">
+            <h5 class="card-title text-white">Need for Speed Hot Pursuit Remastered</h5>
+            <p class="card-text text-muted flex-grow-1" style="color: #fcfbfc85 !important;">
+                Siente la emoción de la persecución y la adrenalina al huir en Need for Speed™ Hot Pursuit Remastered.
+            </p>
+            <div class="button-container mt-2">
+                <button class="btn btn-custom add-to-cart" 
+                        data-item="Need for Speed Hot Pursuit Remastered" 
+                        data-price="56900">
+                    $56.900
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Juego 2 -->
+<div class="col-12 col-md-6 col-lg-3">
+    <div class="card h-100 border-0 bg-dark">
+        <img src="{% static 'img/call of duty.webp' %}" class="card-img-top game-thumbnail" alt="Juego 2">
+        <div class="card-body d-flex flex-column" style="background-color: #050709 !important;">
+            <h5 class="card-title text-white">Call of Duty Black Ops</h5>
+            <p class="card-text text-muted flex-grow-1" style="color: #fcfbfc85 !important;">
+                Call of Duty: Black Ops es un juego de disparos en primera persona (FPS) lanzado en 2010.
+            </p>
+            <div class="button-container mt-2">
+                <button class="btn btn-custom add-to-cart" 
+                        data-item="Call of Duty Black Ops" 
+                        data-price="31900">
+                    $31.900
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- Juego 3 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 border-0 bg-dark">
+                    <img src="{% static 'img/street fighter 5.jpg' %}" class="card-img-top game-thumbnail"
+                        alt="Juego 1">
+                    <div class="card-body d-flex flex-column" style="background-color: #050709 !important;">
+                        <h5 class="card-title text-white">Street Fighter 5</h5>
+                        <p class="card-text text-muted flex-grow-1" style="color: #fcfbfc85 !important;">
+                            Street Fighter V es un juego de lucha lanzado en 2016 que combina combates estratégicos y
+                            rápidos
+                            con un elenco variado de personajes icónicos como Ryu, Chun-Li y Ken.
+                        </p>
+                        <div class="button-container mt-2">
+                            <button class="btn btn-custom add-to-cart" 
+                            data-item="Street Fighter 5" 
+                            data-price="31900">
+                        $31.900
+                    </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Juego 4 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 border-0 bg-dark">
+                    <img src="{% static 'img/super mario odissey.jpeg' %}" class="card-img-top game-thumbnail"
+                        alt="Juego 1">
+                    <div class="card-body d-flex flex-column" style="background-color: #050709 !important;">
+                        <h5 class="card-title text-white">Super Mario Odyssey</h5>
+                        <p class="card-text text-muted flex-grow-1" style="color: #fcfbfc85 !important;">
+                            Super Mario Odyssey es un juego de aventuras y plataformas en 3D donde Mario viaja por
+                            diversos reinos
+                            para rescatar a la Princesa Peach de Bowser.
+                        </p>
+                        <div class="button-container mt-2">
+                            <button class="btn btn-custom add-to-cart" 
+                            data-item="Super Marios Odyssey" 
+                            data-price="31900">
+                        $49.900
+                    </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog ajuste-cuadro">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-white" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" style="background-color: #2cb9e7 !important;" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <h5 id="total_confirm" class="text-white">Total: CLP$0</h5>
+                        <button id="clear-cart" class="btn btn-custom">Vaciar Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const isAdmin = urlParams.has('admin');
+
+        document.getElementById('adminLink').style.display = isAdmin ? 'block' : 'none';
+
+        document.getElementById('adminBtn').textContent = isAdmin ? 'Modo Usuario' : 'Modo Admin';
+
+        document.getElementById('adminBtn').href = isAdmin ? window.location.pathname : '?admin=true';
+    </script>
+
+
+    <script src="{% static 'js/canasta.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<footer class="footer mt-5" style="background-color: #2cb9e7;">
+    <div class="container py-5">
+        <div class="row g-4">
+
+            <div class="col-12 col-md-3 mb-4 mb-md-0">
+                <div class="text-center text-md-start">
+                    <img src="{% static 'img/gamelf-white.png' %}" alt="Logo" 
+                         class="mb-3 img-fluid" style="max-height: 60px;">
+                    <p class="text-white mb-0">Los mejores juegos digitales aquí.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <h5 class="text-white mb-3 fw-bold">Enlaces rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none hover-ft">Sobre nosotros</a></li>
+                    <li class="my-2"><a href="#" class="text-white text-decoration-none hover-ft">Políticas</a></li>
+                    <li><a href="#" class="text-white text-decoration-none hover-ft">Soporte</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <h5 class="text-white mb-3 fw-bold">Contacto</h5>
+                <ul class="list-unstyled">
+                    <li class="d-flex align-items-center gap-2 mb-2">
+                        <a href="mailto:contacto@gamelf.com" class="text-white text-decoration-none hover-ft">
+                            <i class="fi fi-tr-envelope-dot"></i>
+                            contacto@gamelf.com
+                        </a>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 hover-ft">
+                        <a href="tel:+56912345678" class="text-white text-decoration-none hover-ft">
+                            <i class="fi fi-tr-mobile-button"></i>
+                            +56 9 1234 5678
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <h5 class="text-white mb-3 fw-bold">Síguenos</h5>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                    <a href="#" class="text-white social-icon">
+                        <i class="fi fi-brands-facebook fs-5"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fi fi-brands-instagram fs-5"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fi fi-brands-twitter-alt fs-5"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fi fi-brands-youtube fs-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <p class="text-white text-center mb-0 py-3 footer-border">
+                    © 2025 GameLF. Todos Los Derechos Reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

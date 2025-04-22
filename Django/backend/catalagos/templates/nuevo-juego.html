@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fuente JetBrains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+
+    <!-- iconos -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+
+    <title>Agregar Nuevo Juego</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'catalogo' %}">
+                <img src="{% static '/img/gamelf-white.png' %}" style="width: 150px !important; margin-right: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav align-items-center gap-3">
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'catalogo' %}">
+                        <i class="fi fi-tr-house-blank" style="font-size: 1.1rem;"></i>
+                        Inicio
+                    </a>
+
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'categoria' %}">
+                        <i class="fi fi-tr-category" style="font-size: 1.1rem;"></i>
+                        Categoría
+                    </a>
+
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'login' %}">
+                        <i class="fi fi-tr-sign-in-alt" style="font-size: 1.1rem;"></i>
+                        Iniciar Sesión
+                    </a>
+
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'registro' %}">
+                        <i class="fi fi-tr-clipboard-list" style="font-size: 1.1rem;"></i>
+                        Registro
+                    </a>
+
+                    <a class="nav-link d-flex align-items-center gap-2" href="{% url 'perfil' %}">
+                        <i class="fi fi-tr-clipboard-user" style="font-size: 1.1rem;"></i>
+                        Perfil
+                    </a>
+
+                    <a class="nav-link" href="{% url 'crearJuego' %}" id="adminLink" style="display: none;">
+                        <i class="fi fi-tr-add"></i>
+                        Agregar Juego</a>
+
+                        <a class="btn position-relative" id="cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fi fi-tr-basket-shopping-simple"></i>
+                            <span id="cart-count" class="badge bg-carrito-badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+                        </a>
+                </div>
+                <div class="ms-lg-auto ps-lg-3">
+                    <a href="?admin=true" class="btn btn-custom d-flex align-items-center gap-2" id="adminBtn">
+                        <i class="fi fi-tr-shield" style="font-size: 1.1rem;"></i>
+                        Modo Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="registro-seccion">
+        <div class="container-fluid h-100 mt-4">
+            <div class="row g-0 h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="registro-form p-5 rounded-4">
+                        <h1 class="text-center mb-4 text-white">Agregar Nuevo Juego</h1>
+                        
+                        <form id="form_nuevojuego" class="needs-validation" novalidate>
+                            <div class="row g-3">
+
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label for="categoria" class="form-label text-white">Categoría del Juego</label>
+                                        <select name="categoria" id="categoria" 
+                                                class="form-control bg-transparent text-white border-secondary"
+                                                required>
+                                            <option value="" disabled selected>Selecciona categoría</option>
+                                            {% for categoria in categorias %}
+                                            <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="invalid-feedback" id="categoria-error"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-8">
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label text-white">Nombre del Juego</label>
+                                        <input type="text" name="nombre" id="nombre" 
+                                               class="form-control bg-transparent text-white border-secondary"
+                                               required>
+                                        <div class="invalid-feedback" id="nombre-error"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="precio" class="form-label text-white">Precio</label>
+                                        <input type="number" name="precio" id="precio" 
+                                               class="form-control bg-transparent text-white border-secondary"
+                                               required>
+                                        <div class="invalid-feedback" id="precio-error"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="descripcion" class="form-label text-white">Descripción</label>
+                                        <textarea name="descripcion" id="descripcion" rows="4"
+                                                  class="form-control bg-transparent text-white border-secondary"
+                                                  required></textarea>
+                                        <div class="invalid-feedback" id="descripcion-error"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="imagen" class="form-label text-white">Imagen</label>
+                                        <input type="file" name="imagen" id="imagen" 
+                                               class="form-control bg-transparent text-white border-secondary"
+                                               accept="image/*" required>
+                                        <small class="text-muted" style="color: #ffffff79 !important;">Formatos aceptados: JPG, PNG, WEBP</small>
+                                        <div class="invalid-feedback" id="imagen-error"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-12">
+                                    <div class="d-grid gap-3 mt-4">
+                                        <button type="submit" class="btn btn-custom btn-lg rounded-pill">
+                                            Guardar Juego
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog ajuste-cuadro">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-white" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" style="background-color: #2cb9e7 !important;" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <h5 id="total_confirm" class="text-white">Total: CLP$0</h5>
+                        <button id="clear-cart" class="btn btn-custom">Vaciar Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/canasta.js' %}"></script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const isAdmin = urlParams.has('admin');
+        
+        document.getElementById('adminLink').style.display = isAdmin ? 'block' : 'none';
+        
+        document.getElementById('adminBtn').textContent = isAdmin ? 'Modo Usuario' : 'Modo Admin';
+        
+        document.getElementById('adminBtn').href = isAdmin ? window.location.pathname : '?admin=true';
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'js/nuevo-juego.js' %}" ></script>
+</body>
+<footer class="footer mt-5" style="background-color: #2cb9e7;">
+    <div class="container py-5">
+        <div class="row g-4">
+
+            <div class="col-12 col-md-3 mb-4 mb-md-0">
+                <div class="text-center text-md-start">
+                    <img src="{% static 'img/gamelf-white.png' %}" alt="Logo" 
+                         class="mb-3 img-fluid" style="max-height: 60px;">
+                    <p class="text-white mb-0">Los mejores juegos digitales aquí.</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <h5 class="text-white mb-3 fw-bold">Enlaces rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none hover-ft">Sobre nosotros</a></li>
+                    <li class="my-2"><a href="#" class="text-white text-decoration-none hover-ft">Políticas</a></li>
+                    <li><a href="#" class="text-white text-decoration-none hover-ft">Soporte</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <h5 class="text-white mb-3 fw-bold">Contacto</h5>
+                <ul class="list-unstyled">
+                    <li class="d-flex align-items-center gap-2 mb-2">
+                        <a href="mailto:contacto@gamelf.com" class="text-white text-decoration-none hover-ft">
+                            <i class="fi fi-tr-envelope-dot"></i>
+                            contacto@gamelf.com
+                        </a>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 hover-ft">
+                        <a href="tel:+56912345678" class="text-white text-decoration-none hover-ft">
+                            <i class="fi fi-tr-mobile-button"></i>
+                            +56 9 1234 5678
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <h5 class="text-white mb-3 fw-bold">Síguenos</h5>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                    <a href="#" class="text-white social-icon">
+                        <i class="fi fi-brands-facebook fs-5"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fi fi-brands-instagram fs-5"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fi fi-brands-twitter-alt fs-5"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fi fi-brands-youtube fs-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <p class="text-white text-center mb-0 py-3 footer-border">
+                    © 2025 GameLF. Todos Los Derechos Reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .cart-counter {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 3px 7px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Tienda</a>
+            <button id="cart-btn" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                🛒 <span id="cart-count" class="cart-counter d-none">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row" id="product-list">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 1</h5>
+                        <p class="card-text">$10.00</p>
+                        <button class="btn btn-primary add-to-cart">🛍️ Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 2</h5>
+                        <p class="card-text">$15.00</p>
+                        <button class="btn btn-primary add-to-cart">🛍️ Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cart-items" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = {};
+
+        function updateCartDisplay() {
+            let count = Object.values(cart).reduce((a, b) => a + b, 0);
+            if (count > 0) {
+                $('#cart-count').text(count).removeClass('d-none');
+            } else {
+                $('#cart-count').addClass('d-none');
+            }
+            let cartItems = $('#cart-items');
+            cartItems.empty();
+            Object.keys(cart).forEach(item => {
+                cartItems.append(`<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${item} <span class="badge bg-primary rounded-pill">${cart[item]}</span>
+                    <button class="btn btn-danger btn-sm remove-item" data-item="${item}">❌</button>
+                </li>`);
+            });
+        }
+
+        $(document).on('click', '.add-to-cart', function () {
+            let product = $(this).siblings('.card-title').text();
+            cart[product] = (cart[product] || 0) + 1;
+            updateCartDisplay();
+        });
+
+        $(document).on('click', '.remove-item', function () {
+            let product = $(this).data('item');
+            if (cart[product] > 1) {
+                cart[product]--;
+            } else {
+                delete cart[product];
+            }
+            updateCartDisplay();
+        });
+    </script>
+</body>
+</html>

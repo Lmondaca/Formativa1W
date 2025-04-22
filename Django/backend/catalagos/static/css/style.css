@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: JetBrains Mono;
+
+
+}
+
+body {
+    background-color: #050709;
+}
+
+nav {
+    background-color: #050709;
+}
+
+a.nav-link {
+    color: #fcfbfc;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #2cb9e7 !important;
+}
+
+.navbar-nav .nav-link:hover i {
+    color: #2cb9e7 !important;
+}
+
+.admin-only {
+    display: none !important;
+}
+
+.admin-only.show {
+    display: block !important; }
+
+.navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23fcfbfc' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+.btn-custom {
+    background-color: #2cb9e7 !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(44, 185, 231, 0.4);
+    background-color: #24a1c9 ;
+}
+
+
+.btn-custom:hover::after {
+    left: 120%;
+}
+
+
+/* estilo de cajas */
+
+.card-body {
+    min-height: 220px;
+}
+
+.button-container {
+    margin-top: auto;
+    width: 100%;
+}
+
+.game-thumbnail {
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-text {
+    min-height: 60px;
+    overflow: hidden;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #000;
+}
+
+@media (max-width: 768px) {
+    .game-thumbnail {
+        height: 150px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+.hover-ft:hover{
+    cursor: pointer;
+    color: #363d3f !important;
+    transition: all 0.5s ease ;
+}
+.social-icon {
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.footer a {
+    text-decoration: none !important;
+}
+
+@media (max-width: 768px) {
+    .footer .col-6 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer h5 {
+        font-size: 1.1rem;
+    }
+}
+
+.bg-carrito-badge {
+    background-color: #2cb9e7 !important;
+}
+
+
+/* login */
+.login-image-container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrap-img {
+    height: 100%;
+    width: 100%;
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-control {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff !important;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+}
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+
+@media (max-width: 768px) {
+    .login-section {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .login-image-container {
+        height: 40vh;
+    }
+    
+    .login-form {
+        margin: 2rem;
+        backdrop-filter: blur(8px);
+    }
+}
+
+/* Registro */
+.registro-seccion {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.registro-form {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #2cb9e7;
+    box-shadow: 0 0 0 0.25rem rgba(44, 185, 231, 0.25);
+}
+
+@media (max-width: 768px) {
+    .registro-seccion {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    
+    .registro-form {
+        margin: 1rem;
+        backdrop-filter: blur(8px);
+    }
+}
+
+/* Perfil */
+.perfil-form {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+/* Campos deshabilitados */
+.form-control:disabled {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    opacity: 0.8;
+}
+
+
+/* Carrito */
+#cart-items tr td {
+    vertical-align: middle;
+}
+
+#cart-items .remove-item {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+}
