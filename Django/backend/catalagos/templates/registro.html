@@ -176,6 +176,37 @@
         </div>
     </section>
 
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog ajuste-cuadro">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-white" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" style="background-color: #2cb9e7 !important;" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-dark">
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <h5 id="total_confirm" class="text-white">Total: CLP$0</h5>
+                        <button id="clear-cart" class="btn btn-custom">Vaciar Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/canasta.js' %}"></script>
+
     <script src="{% static 'js/registro.js' %}"></script>
 </body>
 <footer class="footer mt-5" style="background-color: #2cb9e7;">
