@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
 
 
-    $("#formularioRegistro").submit(function (event) {
+    $("#formularioPerfil").submit(function (event) {
         event.preventDefault();
 
         $(".error").text("");
