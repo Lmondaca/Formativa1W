@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos</title>
+</head>
+<body>
+    <h1>Juegos:</h1>
+    <a href="{% url 'juegos_new' %}">Nuevo Juego</a>
+
+    <table border="1" cellpadding="4">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Categoria</th>
+                <th>Acciones</th>
+            </tr>
+            {% for e in juegos %}
+            <tr>
+                <td> {{e.id}} </td>
+                <td> {{e.nombre}} </td>
+                <td> {{e.descripcion}} </td>
+                <td> {{e.precio}} </td>
+                <td> {{e.categoria}} </td>
+                <td>
+                    Edtitar, eliminar
+                    <a href="{% url 'juegos_edit' e.id %}">Editar</a>
+                </td>
+
+            </tr>
+
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay juegos disponibles.</td>
+                </tr>
+            {% endfor %}
+    </table>
+</body>
+</html>
