@@ -19,17 +19,27 @@ def juego_list(request):
 
 def juego_form(request, pk=None):
     dato_inicial = obtener_juego(pk) if pk else None
-    form = JuegosForm(request.POST or None, initial=dato_inicial)
+    form = JuegosForm(request.POST or None, request.FILES, initial=dato_inicial)
+    print("antes del if")
     
     if request.method == 'POST' and form.is_valid():
-        print("Datos del formulario:", form.cleaned_data)
+        print("Es POST")
+        print("Form válido:", form.is_valid())
+        print("Errores del formulario:", form.errors)
+        print("Datos del formulario:", form.cleaned_data)  # Para depuración
         if pk:
             # Actualizar juego existente
             actualizar_juego(pk, form.cleaned_data)
         else:
             # Crear juego nuevo
             create_juego(form.cleaned_data)
+            # Guarda la imagen en el servidor
+            nombreImg = form.cleaned_data['image'].name
+            image_path = f"../../Django/backend/catalagos/static/img/{nombreImg}"
+            with open(image_path, "wb") as f:
+                f.write(nombreImg.file.read())
         return redirect('juegos')
+    
     
     return render(request, 'juego_form.html', {'form': form, 'pk': pk})
 

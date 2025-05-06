@@ -1,8 +1,5 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Sequence, Float
+from sqlalchemy import Column, Integer, String, ForeignKey, Sequence, Float, DateTime, Date
 from .database import Base
-
-# Oracle
-
 
 
 class Categoria(Base):
@@ -22,22 +19,17 @@ class Juegos(Base):
     precio = Column(Integer)
     image = Column(String(100))
     categoria_id = Column(Integer, ForeignKey("catalagos_categoria.idCategoria"))
-    imagen = Column(String(100))
+    # imagen = Column(String(100))
     
+class Usuarios(Base):
+    __tablename__ = "catalagos_usuario"
+    usuario_seq = Sequence("usuario_seq", start=1, increment=1)
+    id = Column(Integer, primary_key=True, server_default=usuario_seq.next_value())
+    nombreCompleto = Column("NOMBRECOMPLETO", String(60), index=True)
+    nombreUsuario = Column("NOMBREUSUARIO", String(60), unique=True)
+    correo = Column(String(100), unique=True)
+    # clave = Column(String(128))
+    fechaNacimiento = Column("FECHANACIMIENTO", Date)
+    direccion = Column(String(300))
+    # user_id = Column(Integer, ForeignKey("auth_user.id"))
     
-# SQLite
-# class Categoria(Base):
-#     __tablename__ = "categoria"
-    
-#     idCategoria = Column(Integer, primary_key=True)
-#     nombre = Column(String(50), nullable=False)
-#     descripcion = Column(String(200))
-
-# class Juegos(Base):
-#     __tablename__ = "juegos"
-
-#     id = Column(Integer, primary_key=True)
-#     nombre = Column(String(60), index=True)
-#     descripcion = Column(String(1000))
-#     precio = Column(Integer)
-#     categoria_id = Column(String, ForeignKey("categoria.idCategoria"))
