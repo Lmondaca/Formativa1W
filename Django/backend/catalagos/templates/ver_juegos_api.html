@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos</title>
+    <style>
+        table { border-collapse: collapse; width: 100%;}
+        td, th { padding: 10px; border: 1px solid #ccc; text-align: left;}
+    </style>
+</head>
+<body>
+    <h1>Juegos desde la API</h1>
+    {% if juegos %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio (USD)</th>
+                    <th>Categoría</th>
+                </tr>
+                {% for jue in juegos %}
+                    <tr>
+                        <td>{{ jue.nombre }}</td>
+                        <td>{{ jue.descripcion }}</td>
+                        <td>{{ jue.precio }}</td>
+                        <td>{{ jue.categoria }}</td>
+                    </tr>
+                {% endfor %}
+        </table>
+    {% else %}
+        <p>No hay juegos disponibles.</p>
+    {% endif %}
+</body>
+</html>

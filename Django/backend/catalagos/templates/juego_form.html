@@ -1,0 +1,45 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if pk %} Editar {% else %} Nuevo {% endif %} juego</title>
+</head>
+<body>
+    <h1>{% if pk %} Editar {% else %} Nuevo {% endif %} juego</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+        <a href="{% url 'juegos' %}">Volver</a>
+
+        
+        <!-- En juego_form.html -->
+        <!-- {% if error_message %}
+        <div class="alert alert-danger">
+        {{ error_message }}
+        </div>
+        {% endif %}
+    </form>
+</body>
+</html> --> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if pk %} Editar {% else %} Nuevo {% endif %} juego</title>
+</head>
+<body>
+    <h1>{% if pk %} Editar {% else %} Nuevo {% endif %} juego</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+        <a href="{% url 'juegos' %}">Volver</a>
+    </form>
+    
+</body>
+</html>
